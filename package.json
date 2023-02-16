@@ -1,0 +1,24 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jekiquin/portfoliov2.git",
+  "author": "Jerick Iquin <jci.dev.0@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "sass": "sass ./styles/sass/styles.scss:./styles/css/styles.css -w --style compressed --no-source-map",
+    "prefix": "postcss ./styles/css/styles.css  --use autoprefixer -o ./styles/css/styles.min.css -w",
+    "dev": "concurrently \"yarn sass\" \"yarn prefix\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.58.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

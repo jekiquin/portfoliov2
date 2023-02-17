@@ -1,4 +1,6 @@
 @import './normalize';
 
-// for index.html
-@import './index';
+.game {
+  display: flex;
+  justify-content: center;
+}

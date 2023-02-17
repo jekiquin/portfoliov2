@@ -1,1 +1,0 @@
-// scripts for profile page

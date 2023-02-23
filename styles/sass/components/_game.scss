@@ -8,10 +8,16 @@
   &__fallback {
     @extend %normal-theme--dark;
     @extend %justify-align-center;
+    @include gap(8);
     @include background('https://labs.phaser.io/assets/skies/space3.png');
 
+    flex-direction: column;
     height: min(100vh, $game-height);
     width: min(100vw, $game-width);
+  }
+
+  &__logo {
+    width: min(30rem, 70%);
   }
 
   &__message-container {

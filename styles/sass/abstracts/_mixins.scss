@@ -22,3 +22,9 @@
   background-size: cover;
   background-position: center;
 }
+
+@mixin media($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}

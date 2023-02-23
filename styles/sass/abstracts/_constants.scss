@@ -1,0 +1,20 @@
+@use './colors' as *;
+
+$screen: (
+  mobile: 320px,
+  tablet: 768px,
+  desktop: 1024px,
+  wide: 1200px,
+);
+
+$spacing: 8px;
+
+$game-width: 540px;
+$game-height: 720px;
+
+$status: (
+  info: $info,
+  success: $success,
+  warning: $warning,
+  error: $error,
+);

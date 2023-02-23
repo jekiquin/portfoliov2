@@ -1,0 +1,39 @@
+@use './colors' as *;
+@use './mixins' as *;
+@use './constants' as *;
+
+%normal-theme {
+  background-color: $white1;
+  color: $black1;
+
+  &--dark {
+    color: $white1;
+    background-color: $black1;
+  }
+}
+
+%flex {
+  display: flex;
+}
+
+%justify-center {
+  @extend %flex;
+  justify-content: center;
+}
+
+%justify-align-center {
+  @extend %justify-center;
+  align-items: center;
+}
+
+%container {
+  @include padding(2, 1);
+
+  @include media(map-get($screen, 'tablet')) {
+    @include padding(3, 1);
+  }
+
+  @include media(map-get($screen, 'desktop')) {
+    @include padding(4, 2);
+  }
+}

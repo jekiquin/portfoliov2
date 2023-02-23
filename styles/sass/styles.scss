@@ -1,6 +1,3 @@
-@import './normalize';
+@use './base';
 
-.game {
-  display: flex;
-  justify-content: center;
-}
+@use './components';

@@ -1,8 +1,24 @@
+@use './functions' as *;
+
 @mixin square($factor) {
   height: 1rem * $factor;
   width: 1rem * $factor;
 }
 
 @mixin gap($factor) {
-  gap: 8px * $factor;
+  gap: gap($factor);
+}
+
+@mixin padding($left, $top: null, $right: null, $bottom: null) {
+  padding: spacing($left, $top, $right, $bottom);
+}
+
+@mixin margin($left, $top: null, $right: null, $bottom: null) {
+  margin: spacing($left, $top, $right, $bottom);
+}
+
+@mixin background($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-position: center;
 }

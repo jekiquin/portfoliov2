@@ -8,11 +8,23 @@
   &__fallback {
     @extend %normal-theme--dark;
     @extend %justify-align-center;
-
-    flex-direction: column;
+    @include background('https://labs.phaser.io/assets/skies/space3.png');
 
     height: min(100vh, $game-height);
     width: min(100vw, $game-width);
+  }
+
+  &__message-container {
+    @extend %justify-align-center;
+    @include padding(4, 2);
+
+    flex-direction: column;
+    background: rgba(49, 49, 49, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.6px);
+    -webkit-backdrop-filter: blur(8.6px);
+    border: 1px solid rgba(49, 49, 49, 0.99);
   }
 
   &__error {

@@ -1,0 +1,26 @@
+@use './constants' as *;
+
+@function gap($factor) {
+  @if $factor == null {
+    @return null;
+  }
+
+  @return $spacing * $factor;
+}
+
+@function spacing($left, $top: null, $right: null, $bottom: null) {
+  $l: gap($left);
+  $t: gap($top);
+  $r: gap($right);
+  $b: gap($bottom);
+
+  @if $t == null {
+    @return $l;
+  } @else if $right == null {
+    @return $l $t;
+  } @else if $bottom == null {
+    @return $l $t $r;
+  } @else {
+    @return $l $t $r $b;
+  }
+}

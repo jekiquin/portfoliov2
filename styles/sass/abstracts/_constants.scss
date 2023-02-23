@@ -1,2 +1,11 @@
+@use './colors' as *;
+
 $game-width: 540px;
 $game-height: 720px;
+
+$status: (
+  info: $info,
+  success: $success,
+  warning: $warning,
+  error: $error,
+);

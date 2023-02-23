@@ -2,3 +2,7 @@
   height: 1rem * $factor;
   width: 1rem * $factor;
 }
+
+@mixin gap($factor) {
+  gap: 8px * $factor;
+}

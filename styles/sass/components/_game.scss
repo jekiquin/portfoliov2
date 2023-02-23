@@ -17,9 +17,16 @@
 
   &__error {
     @extend %justify-align-center;
+    @include gap(1);
 
-    &-icon {
+    color: map-get($status, 'error');
+
+    &-svg {
       @include square(1.5);
+    }
+
+    &-path {
+      fill: map-get($status, 'error');
     }
   }
 }

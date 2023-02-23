@@ -1,5 +1,5 @@
 @use '../abstracts/placeholder';
 
 html {
-  @extend %normal-theme;
+  @extend %normal-theme--dark;
 }

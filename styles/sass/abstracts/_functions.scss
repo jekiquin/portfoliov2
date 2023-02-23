@@ -1,6 +1,6 @@
 @use './constants' as *;
 
-@function gap($factor) {
+@function size($factor) {
   @if $factor == null {
     @return null;
   }
@@ -9,10 +9,10 @@
 }
 
 @function spacing($left, $top: null, $right: null, $bottom: null) {
-  $l: gap($left);
-  $t: gap($top);
-  $r: gap($right);
-  $b: gap($bottom);
+  $l: size($left);
+  $t: size($top);
+  $r: size($right);
+  $b: size($bottom);
 
   @if $t == null {
     @return $l;

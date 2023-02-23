@@ -6,7 +6,7 @@
 }
 
 @mixin gap($factor) {
-  gap: gap($factor);
+  gap: size($factor);
 }
 
 @mixin padding($left, $top: null, $right: null, $bottom: null) {

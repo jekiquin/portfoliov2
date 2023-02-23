@@ -1,0 +1,12 @@
+@use '../abstracts/constants' as *;
+
+.game {
+  display: flex;
+  justify-content: center;
+
+  &__fallback {
+    height: min(100vh, $game-height);
+    width: min(100vw, $game-width);
+    background-color: antiquewhite;
+  }
+}

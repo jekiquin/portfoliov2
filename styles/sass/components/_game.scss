@@ -2,12 +2,15 @@
 @use '../abstracts/placholder' as *;
 
 .game {
+  $container: &;
   display: flex;
   justify-content: center;
 
   &__fallback {
+    @extend %normal-theme--dark;
+    @extend #{$container};
+    align-items: center;
     height: min(100vh, $game-height);
     width: min(100vw, $game-width);
-    @extend %normal-theme--dark;
   }
 }

@@ -1,0 +1,4 @@
+@mixin square($factor) {
+  height: 1rem * $factor;
+  width: 1rem * $factor;
+}

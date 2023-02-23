@@ -1,0 +1,25 @@
+@use './colors' as *;
+
+%normal-theme {
+  background-color: $white1;
+  color: $black1;
+
+  &--dark {
+    color: $white1;
+    background-color: $black1;
+  }
+}
+
+%flex {
+  display: flex;
+}
+
+%justify-center {
+  @extend %flex;
+  justify-content: center;
+}
+
+%justify-align-center {
+  @extend %justify-center;
+  align-items: center;
+}

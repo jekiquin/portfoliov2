@@ -10,10 +10,28 @@
     <title>JScripts - Space Invaders</title>
   </head>
   <body>
-    <div id="phaser-game" class="game">
-      <noscript>
-        <div class="game__fallback">this</div>
-      </noscript>
-    </div>
+    <main>
+      <div id="phaser-game" class="game">
+        <noscript>
+          <section class="game__fallback">
+            <div class="game__error">
+              <svg
+                class="game__error-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24V264c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+                />
+              </svg>
+              <h2>Warning!</h2>
+            </div>
+
+            <p>You currently have JavaScript disabled!</p>
+            <p>Please enable it for better experience.</p>
+          </section>
+        </noscript>
+      </div>
+    </main>
   </body>
 </html>

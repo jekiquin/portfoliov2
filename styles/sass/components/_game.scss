@@ -1,16 +1,25 @@
 @use '../abstracts/constants' as *;
-@use '../abstracts/placholder' as *;
+@use '../abstracts/placeholder' as *;
+@use '../abstracts/mixins' as *;
 
 .game {
-  $container: &;
-  display: flex;
-  justify-content: center;
+  @extend %justify-center;
 
   &__fallback {
     @extend %normal-theme--dark;
-    @extend #{$container};
-    align-items: center;
+    @extend %justify-align-center;
+
+    flex-direction: column;
+
     height: min(100vh, $game-height);
     width: min(100vw, $game-width);
+  }
+
+  &__error {
+    @extend %justify-align-center;
+
+    &-icon {
+      @include square(1.5);
+    }
   }
 }

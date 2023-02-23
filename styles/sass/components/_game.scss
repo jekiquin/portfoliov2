@@ -1,4 +1,5 @@
 @use '../abstracts/constants' as *;
+@use '../abstracts/placholder' as *;
 
 .game {
   display: flex;
@@ -7,6 +8,6 @@
   &__fallback {
     height: min(100vh, $game-height);
     width: min(100vw, $game-width);
-    background-color: antiquewhite;
+    @extend %normal-theme--dark;
   }
 }

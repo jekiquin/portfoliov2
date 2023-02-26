@@ -1,4 +1,9 @@
-import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../utils/constants.mjs';
+import {
+  DEFAULT_HEIGHT,
+  DEFAULT_WIDTH,
+  WIDTH,
+  HEIGHT,
+} from '../utils/constants.mjs';
 import HomeScene from './scene/home.mjs';
 
 const GRAVITY = 200;
@@ -8,8 +13,8 @@ export const config = {
   scale: {
     mode: Phaser.Scale.RESIZE,
     parent: 'phaser-game',
-    width: DEFAULT_WIDTH,
-    height: DEFAULT_HEIGHT,
+    width: WIDTH,
+    height: HEIGHT,
     max: {
       width: DEFAULT_WIDTH,
       height: DEFAULT_HEIGHT,

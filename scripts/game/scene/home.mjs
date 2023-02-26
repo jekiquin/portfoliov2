@@ -28,14 +28,12 @@ export default class HomeScene extends Phaser.Scene {
     this.sizer = new Phaser.Structs.Size(
       DEFAULT_WIDTH,
       DEFAULT_HEIGHT,
-      Phaser.Structs.Size.HEIGHT_CONTROLS_WIDTH,
+      Phaser.Structs.Size.WIDTH_CONTROLS_HEIGHT,
       this.parent
     );
 
     this.parent.setSize(width, height);
     this.sizer.setSize(width, height);
-
-    this.backgroundScene = this.scene.get('BackgroundScene');
 
     this.updateCamera();
 
@@ -98,14 +96,16 @@ export default class HomeScene extends Phaser.Scene {
   updateCamera() {
     const camera = this.cameras.main;
 
-    const x = Math.ceil((this.parent.width - this.sizer.width) * 0.5);
-    const y = 0;
+    console.log(this.sizer.width, this.sizer.height);
+
+    const y = (this.parent.height - this.sizer.height) * 0.5;
+    const x = 0;
     const scaleX = this.sizer.width / DEFAULT_WIDTH;
     const scaleY = this.sizer.height / DEFAULT_HEIGHT;
 
     camera.setViewport(x, y, this.sizer.width, this.sizer.height);
     camera.setZoom(Math.max(scaleX, scaleY));
-    camera.centerOn(DEFAULT_WIDTH / 2, DEFAULT_HEIGHT / 2);
+    camera.centerOn(this.sizer.width / 2, DEFAULT_HEIGHT / 2);
   }
 
   getZoom() {
@@ -115,6 +115,8 @@ export default class HomeScene extends Phaser.Scene {
   resize(gameSize, baseSize, displaySize, resolution) {
     const width = gameSize.width;
     const height = gameSize.height;
+
+    console.log(width, height);
 
     this.parent.setSize(width, height);
     this.sizer.setSize(width, height);

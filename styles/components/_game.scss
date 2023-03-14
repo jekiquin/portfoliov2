@@ -1,7 +1,10 @@
 @use '../abstracts' as *;
 
+@use '../../public/fonts/PressStart/stylesheet.scss';
+
 .game {
   @extend %justify-center;
+  font-family: 'Press Start 2P';
 
   &__fallback {
     @extend %normal-theme--dark;
@@ -28,6 +31,7 @@
     @extend %justify-align-center;
     @include margin(2);
 
+    text-align: center;
     flex-direction: column;
     background: rgba($black1, 0.5);
     border-radius: size(1);

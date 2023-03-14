@@ -1,8 +1,12 @@
 import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../../utils/constants.js';
 
+import bg from '/images/game/spaceinvadersbg.webp';
+import logo from '/images/game/spaceinvaderslogo.webp';
+import button from '/images/game/spaceinvadersbutton.webp';
+import platform from '/images/game/platform.webp';
+
 const PULSATE_TIMING = 500;
 const STOPPED_STATE = 1.25;
-
 export default class HomeScene extends Phaser.Scene {
   constructor() {
     super({ key: 'HomeScene' });
@@ -14,10 +18,10 @@ export default class HomeScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('bg', 'assets/images/game/spaceinvadersbg.webp');
-    this.load.image('logo', 'assets/images/game/spaceinvaderslogo.webp');
-    this.load.image('button', 'assets/images/game/spaceinvadersbutton.webp');
-    this.load.image('platform', 'assets/images/game/platform.webp');
+    this.load.image('bg', bg);
+    this.load.image('logo', logo);
+    this.load.image('button', button);
+    this.load.image('platform', platform);
   }
 
   create() {

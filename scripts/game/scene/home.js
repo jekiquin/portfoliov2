@@ -1,4 +1,4 @@
-import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../../utils/constants.mjs';
+import { DEFAULT_HEIGHT, DEFAULT_WIDTH } from '../../utils/constants.js';
 
 const PULSATE_TIMING = 500;
 const STOPPED_STATE = 1.25;

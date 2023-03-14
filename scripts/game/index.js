@@ -3,8 +3,8 @@ import {
   DEFAULT_WIDTH,
   WIDTH,
   HEIGHT,
-} from '../utils/constants.mjs';
-import HomeScene from './scene/home.mjs';
+} from '../utils/constants.js';
+import HomeScene from './scene/home.js';
 
 const GRAVITY = 200;
 

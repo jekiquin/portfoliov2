@@ -6,16 +6,15 @@
   "author": "Jerick Iquin <jci.dev.0@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "sass": "sass ./styles/sass/styles.scss:./styles/css/styles.css -w --style compressed --no-source-map",
-    "prefix": "postcss ./styles/css/styles.css  --use autoprefixer -o ./styles/css/styles.min.css -w",
-    "dev": "concurrently \"yarn sass\" \"yarn prefix\""
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "concurrently": "^7.6.0",
     "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
-    "sass": "^1.58.1"
+    "sass": "^1.58.1",
+    "vite": "^4.1.4"
   },
   "browserslist": [
     "> 1%",

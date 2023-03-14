@@ -1,4 +1,6 @@
-import { HEIGHT, WIDTH } from './utils/constants.mjs';
+import '../styles/styles.scss';
+
+import { HEIGHT, WIDTH } from './utils/constants.js';
 
 const GRAVITY = 200;
 

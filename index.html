@@ -9,34 +9,8 @@
     <title>JScripts - This is my world!</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="header__nav">
-        <a class="header__image-container" href="/">
-          <img
-            class="header__image"
-            src="./public/images/logo/JI-Scripts.svg"
-            alt="logo"
-          />
-        </a>
-
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">About</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Skills</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Projects</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Resume</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div id="phaser-game" class="game">
+    <section class="game">
+      <div id="phaser-game" class="game__container">
         <noscript>
           <section class="game__fallback">
             <div class="game__message-container">
@@ -68,6 +42,34 @@
           </section>
         </noscript>
       </div>
-    </main>
+    </section>
+
+    <header class="header">
+      <nav class="header__nav">
+        <a class="header__image-container" href="/">
+          <img
+            class="header__image"
+            src="./public/images/logo/JI-Scripts.svg"
+            alt="logo"
+          />
+        </a>
+
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">About</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">Skills</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">Projects</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">Resume</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main></main>
   </body>
 </html>

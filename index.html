@@ -54,20 +54,30 @@
           />
         </a>
 
-        <ul class="header__menu">
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">About</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Skills</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Projects</a>
-          </li>
-          <li class="header__menu-item">
-            <a class="header__menu-link" href="#">Resume</a>
-          </li>
-        </ul>
+        <div class="header__menu">
+          <input
+            class="header__menu-checkbox"
+            type="checkbox"
+            id="menu-toggle"
+          />
+          <ul class="header__menu-list">
+            <li>
+              <a class="header__menu-link" href="#">About</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Skills</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Projects</a>
+            </li>
+            <li>
+              <a class="header__menu-link" href="#">Resume</a>
+            </li>
+          </ul>
+          <div class="header__menu-toggle">
+            <label for="menu-toggle">toggle</label>
+          </div>
+        </div>
       </nav>
     </header>
     <main></main>

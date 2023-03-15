@@ -1,6 +1,4 @@
-@use '../abstracts/placeholder' as *;
-@use '../abstracts/colors' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts' as *;
 
 .header {
   $height: 2rem;
@@ -25,13 +23,36 @@
   }
 
   &__menu {
-    @extend %justify-align-center;
-    @include gap(4);
-    list-style-type: none;
+    &-list {
+      @extend %justify-align-center;
+      @include gap(4);
+      padding-inline-start: 0;
+      list-style-type: none;
+      position: absolute;
+      top: $game-height;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+
+      @include media(map-get($screen, 'tablet')) {
+        position: static;
+        inset: 0;
+      }
+    }
 
     &-link {
       text-decoration: none;
       color: $black1;
+    }
+
+    &-toggle {
+      @include media(map-get($screen, 'tablet')) {
+        display: none;
+      }
+    }
+
+    &-checkbox {
+      display: none;
     }
   }
 }

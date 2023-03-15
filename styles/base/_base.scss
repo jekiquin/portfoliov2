@@ -3,8 +3,14 @@
 html {
   @extend %normal-theme--dark;
   font-size: 0.875rem;
+  overflow-x: hidden;
+  position: relative;
 
   @include media(map-get($screen, 'desktop')) {
     font-size: 1rem;
   }
+}
+
+main {
+  @extend %normal-theme--dark;
 }

@@ -8,19 +8,19 @@
   @return $spacing * $factor;
 }
 
-@function spacing($left, $top: null, $right: null, $bottom: null) {
+@function spacing($top, $right: null, $bottom: null, $left: null) {
   $l: size($left);
   $t: size($top);
   $r: size($right);
   $b: size($bottom);
 
-  @if $t == null {
-    @return $l;
-  } @else if $right == null {
-    @return $l $t;
-  } @else if $bottom == null {
-    @return $l $t $r;
+  @if $r == null {
+    @return $t;
+  } @else if $b == null {
+    @return $t $r;
+  } @else if $l == null {
+    @return $t $r $b;
   } @else {
-    @return $l $t $r $b;
+    @return $t $r $b $l;
   }
 }

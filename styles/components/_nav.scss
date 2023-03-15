@@ -29,17 +29,34 @@
     &-list {
       @extend %justify-align-center;
       @include gap(4);
-      padding-inline-start: 0;
+      @include padding(2, 6);
       list-style-type: none;
       position: absolute;
       top: $game-height;
-      left: 0;
-      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit;
       z-index: -1;
+      opacity: 0;
+      background-color: $secondary;
+      border-radius: 8px;
+      transition: top 0.2s cubic-bezier(0.26, -0.86, 0.3, 1.01),
+        opacity 0.2s ease-in;
+
+      #{$menu}-checkbox:checked ~ & {
+        transition: top 0.2s cubic-bezier(0.38, 0.3, 0.29, 1.75),
+          opacity 0.2s ease-in;
+        z-index: 20;
+        top: calc($game-height + $height + 0.5rem);
+        opacity: 100%;
+      }
 
       @include media($breakpoint) {
         position: static;
         inset: 0;
+        opacity: 100%;
+        padding: 0;
+        transform: translateX(0);
       }
     }
 
@@ -63,7 +80,7 @@
     }
 
     &-button {
-      height: 1.2rem;
+      height: 1.5rem;
       width: 1.5rem;
       position: relative;
     }
@@ -77,11 +94,11 @@
         top 0.1s ease-in 0.15s, bottom 0.1s ease-in 0.15s;
 
       &--top {
-        top: 0;
+        top: 10%;
       }
 
       &--bottom {
-        top: 100%;
+        top: 90%;
       }
 
       &--middle {

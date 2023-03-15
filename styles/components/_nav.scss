@@ -3,6 +3,9 @@
 .header {
   $height: 2rem;
   background-color: $secondary;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   &__nav {
     @extend %container;
@@ -32,7 +35,7 @@
       @include padding(2, 6);
       list-style-type: none;
       position: absolute;
-      top: $game-height;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
       width: fit;
@@ -40,14 +43,14 @@
       opacity: 0;
       background-color: $secondary;
       border-radius: 8px;
-      transition: top 0.2s cubic-bezier(0.26, -0.86, 0.3, 1.01),
-        opacity 0.2s ease-in;
+      //   transition: top 0.2s cubic-bezier(0.26, -0.86, 0.3, 1.01),
+      //     opacity 0.2s ease-in;
 
       #{$menu}-checkbox:checked ~ & {
         transition: top 0.2s cubic-bezier(0.38, 0.3, 0.29, 1.75),
           opacity 0.2s ease-in;
         z-index: 20;
-        top: calc($game-height + $height + 0.5rem);
+        top: calc($height + 0.5rem);
         opacity: 100%;
       }
 

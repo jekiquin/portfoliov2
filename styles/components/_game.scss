@@ -5,8 +5,9 @@
 .game {
   font-family: 'Press Start 2P';
   // todo: have to set it forward or backward
-  // position: absolute;
-  // inset: 0;
+  position: absolute;
+  inset: 0;
+  display: none;
 
   &__container {
     @extend %justify-center;

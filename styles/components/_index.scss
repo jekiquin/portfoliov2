@@ -1,2 +1,14 @@
 @forward './game';
 @forward './nav';
+@use '../abstracts' as *;
+
+.section {
+  @extend %container;
+  border: solid 1px black;
+  height: 100vh;
+  scroll-margin-top: calc(2rem + size(1));
+
+  @include media(map-get($screen, 'desktop')) {
+    scroll-margin-top: calc(2rem + size(2));
+  }
+}

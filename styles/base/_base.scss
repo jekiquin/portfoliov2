@@ -3,14 +3,23 @@
 html {
   @extend %normal-theme--dark;
   font-size: 0.875rem;
-  overflow-x: hidden;
-  position: relative;
+  scroll-behavior: smooth;
 
   @include media(map-get($screen, 'desktop')) {
     font-size: 1rem;
   }
 }
 
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 main {
   @extend %normal-theme--dark;
+  margin-top: calc(2rem + size(1));
+
+  @include media(map-get($screen, 'desktop')) {
+    scroll-margin-top: calc(2rem + size(2));
+  }
 }

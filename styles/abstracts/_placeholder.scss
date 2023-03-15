@@ -28,12 +28,21 @@
 
 %container {
   @include padding(2, 1);
+  max-width: map-get($screen, 'ultra');
 
   @include media(map-get($screen, 'tablet')) {
     @include padding(3, 1);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @include media(map-get($screen, 'desktop')) {
     @include padding(4, 2);
   }
+}
+
+%img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }

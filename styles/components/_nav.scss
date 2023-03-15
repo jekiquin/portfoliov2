@@ -1,0 +1,18 @@
+@use '../abstracts/placeholder' as *;
+@use '../abstracts/mixins' as *;
+
+.nav {
+  $height: 2rem;
+  @extend %container;
+  height: $height;
+
+  &__image-container {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+  }
+
+  &__image {
+    @extend %img;
+  }
+}

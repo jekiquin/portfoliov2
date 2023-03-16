@@ -1,9 +1,11 @@
 @use '../abstracts' as *;
 
 .header {
+  //   display: none;
   $height: 2rem;
   background-color: $secondary;
   position: fixed;
+  z-index: 10;
   top: 0;
   width: 100%;
 
@@ -40,7 +42,6 @@
       transform: translateX(-50%);
       width: fit;
       opacity: 0%;
-      background-color: $secondary;
       border-radius: 8px;
       transition: top 0.25s cubic-bezier(0.26, -0.86, 0.3, 1.01) 0.1s,
         opacity 0.2s ease-in;
@@ -94,7 +95,7 @@
       }
 
       &:hover,
-      &--active {
+      &.active {
         &:after,
         &:before {
           transform: scaleX(100%);

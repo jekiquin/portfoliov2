@@ -4,11 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- todo: need to install phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!-- page piling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./scripts/pagePiling/jquery.pagepiling.css"
+    />
+    <script
+      type="module"
+      src="/scripts/pagePiling/jquery.pagepiling.js"
+    ></script>
     <script src="scripts/index.js" type="module" defer></script>
     <title>JScripts - This is my world!</title>
   </head>
   <body>
+    <head>
+      <noscript>
+        <style>
+          html,
+          body,
+          .pp-scrollable {
+            overflow-y: auto;
+          }
+        </style>
+      </noscript>
+    </head>
     <section class="game">
       <div id="phaser-game" class="game__container">
         <noscript>
@@ -54,7 +77,7 @@
           />
         </a>
 
-        <div class="header__menu">
+        <div class="header__menu" id="menu">
           <input
             class="header__menu-checkbox"
             type="checkbox"
@@ -62,14 +85,21 @@
           />
           <ul class="header__menu-list">
             <li
-              class="header__menu-item header__menu-item--about header__menu-item--active"
+              data-menuanchor="about"
+              class="header__menu-item header__menu-item--about active"
             >
               <a class="header__menu-link" href="#about">About</a>
             </li>
-            <li class="header__menu-item header__menu-item--skills">
+            <li
+              data-menuanchor="skills"
+              class="header__menu-item header__menu-item--skills"
+            >
               <a class="header__menu-link" href="#skills">Skills</a>
             </li>
-            <li class="header__menu-item header__menu-item--projects">
+            <li
+              data-menuanchor="projects"
+              class="header__menu-item header__menu-item--projects"
+            >
               <a class="header__menu-link" href="#projects">Projects</a>
             </li>
             <li class="header__menu-item">
@@ -93,10 +123,16 @@
       </nav>
     </header>
 
-    <main>
-      <section class="section" id="about">about</section>
-      <section class="section" id="skills">skills</section>
-      <section class="section" id="projects">projects</section>
+    <main id="pagepiling">
+      <section class="section pp-scrollable" id="about">
+        <div class="page page--red">about</div>
+      </section>
+      <section class="section pp-scrollable" id="skills">
+        <div class="page page--yellow">skills</div>
+      </section>
+      <section class="section pp-scrollable" id="projects">
+        <div class="page page--blue">projects</div>
+      </section>
     </main>
   </body>
 </html>

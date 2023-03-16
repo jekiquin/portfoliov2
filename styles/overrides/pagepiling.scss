@@ -1,0 +1,10 @@
+@use '../abstracts/colors' as *;
+
+.pp-tooltip {
+  color: $accent;
+}
+
+#pp-nav li .active span,
+.pp-slidesNav .active span {
+  background: $accent;
+}

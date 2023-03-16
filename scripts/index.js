@@ -11,6 +11,7 @@ const initGame = () => {
 // ------------------------ Event listeners ------------------------
 
 $(document).ready(function () {
+  $('.header__menu-item--about').addClass('active');
   $('#pagepiling').pagepiling({
     menu: '#menu',
     direction: 'vertical',

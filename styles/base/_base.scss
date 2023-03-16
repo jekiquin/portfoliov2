@@ -9,10 +9,10 @@ html {
   }
 }
 
-main {
-  margin-top: calc(2rem + size(2));
+// main {
+//   margin-top: calc(2rem + size(2));
 
-  @include media(map-get($screen, 'desktop')) {
-    margin-top: calc(2rem + size(4));
-  }
-}
+//   @include media(map-get($screen, 'desktop')) {
+//     margin-top: calc(2rem + size(4));
+//   }
+// }

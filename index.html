@@ -28,6 +28,17 @@
           body,
           .pp-scrollable {
             overflow-y: auto;
+            scroll-behavior: smooth;
+          }
+          .header__menu-item.active:before,
+          .header__menu-item.active:after {
+            transform: scaleX(0);
+          }
+          .section {
+            padding-top: 4rem;
+          }
+          .page {
+            margin-top: 0;
           }
         </style>
       </noscript>
@@ -86,7 +97,7 @@
           <ul class="header__menu-list">
             <li
               data-menuanchor="about"
-              class="header__menu-item header__menu-item--about active"
+              class="header__menu-item header__menu-item--about"
             >
               <a class="header__menu-link" href="#about">About</a>
             </li>

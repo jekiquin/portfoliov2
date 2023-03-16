@@ -5,6 +5,11 @@
 .page {
   @extend %container;
   height: 200vh;
+  margin-top: calc(2rem + size(2));
+
+  @include media(map-get($screen, 'desktop')) {
+    margin-top: calc(2rem + size(4));
+  }
 
   &--red {
     background-color: red;

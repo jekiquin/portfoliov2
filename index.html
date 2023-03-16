@@ -4,13 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- todo: need to install phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!-- page piling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./scripts/pagePiling/jquery.pagepiling.css"
+    />
+    <script
+      type="module"
+      src="/scripts/pagePiling/jquery.pagepiling.js"
+    ></script>
     <script src="scripts/index.js" type="module" defer></script>
     <title>JScripts - This is my world!</title>
   </head>
   <body>
-    <main>
-      <div id="phaser-game" class="game">
+    <head>
+      <noscript>
+        <style>
+          html,
+          body,
+          .pp-scrollable {
+            overflow-y: auto;
+            scroll-behavior: smooth;
+          }
+          .header__menu-item.active:before,
+          .header__menu-item.active:after {
+            transform: scaleX(0);
+          }
+          .section {
+            padding-top: 4rem;
+          }
+          .page {
+            margin-top: 0;
+          }
+        </style>
+      </noscript>
+    </head>
+    <section class="game">
+      <div id="phaser-game" class="game__container">
         <noscript>
           <section class="game__fallback">
             <div class="game__message-container">
@@ -42,6 +76,74 @@
           </section>
         </noscript>
       </div>
+    </section>
+
+    <header class="header">
+      <nav class="header__nav">
+        <a class="header__image-container" href="/">
+          <img
+            class="header__image"
+            src="./public/images/logo/JI-Scripts.svg"
+            alt="logo"
+          />
+        </a>
+
+        <div class="header__menu" id="menu">
+          <input
+            class="header__menu-checkbox"
+            type="checkbox"
+            id="menu-toggle"
+          />
+          <ul class="header__menu-list">
+            <li
+              data-menuanchor="about"
+              class="header__menu-item header__menu-item--about"
+            >
+              <a class="header__menu-link" href="#about">About</a>
+            </li>
+            <li
+              data-menuanchor="skills"
+              class="header__menu-item header__menu-item--skills"
+            >
+              <a class="header__menu-link" href="#skills">Skills</a>
+            </li>
+            <li
+              data-menuanchor="projects"
+              class="header__menu-item header__menu-item--projects"
+            >
+              <a class="header__menu-link" href="#projects">Projects</a>
+            </li>
+            <li class="header__menu-item">
+              <a
+                class="header__menu-link"
+                href="https://resume.io/r/6VH4eSpE3"
+                target="_blank"
+                >Resume</a
+              >
+            </li>
+          </ul>
+
+          <label class="header__menu-toggle" for="menu-toggle">
+            <div class="header__menu-button">
+              <div class="header__menu-line header__menu-line--top"></div>
+              <div class="header__menu-line header__menu-line--middle"></div>
+              <div class="header__menu-line header__menu-line--bottom"></div>
+            </div>
+          </label>
+        </div>
+      </nav>
+    </header>
+
+    <main id="pagepiling">
+      <section class="section pp-scrollable" id="about">
+        <div class="page page--red">about</div>
+      </section>
+      <section class="section pp-scrollable" id="skills">
+        <div class="page page--yellow">skills</div>
+      </section>
+      <section class="section pp-scrollable" id="projects">
+        <div class="page page--blue">projects</div>
+      </section>
     </main>
   </body>
 </html>

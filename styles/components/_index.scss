@@ -1,1 +1,23 @@
 @forward './game';
+@forward './nav';
+@use '../abstracts' as *;
+
+.page {
+  @extend %container;
+  height: 100vh;
+  padding-top: calc(2rem + size(2));
+
+  @include media(map-get($screen, 'desktop')) {
+    padding-top: calc(2rem + size(4));
+  }
+
+  &--red {
+    background-color: red;
+  }
+  &--blue {
+    background-color: blue;
+  }
+  &--yellow {
+    background-color: yellow;
+  }
+}

@@ -100,8 +100,6 @@ export default class HomeScene extends Phaser.Scene {
   updateCamera() {
     const camera = this.cameras.main;
 
-    console.log(this.sizer.width, this.sizer.height);
-
     const y = (this.parent.height - this.sizer.height) * 0.5;
     const x = 0;
     const scaleX = this.sizer.width / DEFAULT_WIDTH;
@@ -119,8 +117,6 @@ export default class HomeScene extends Phaser.Scene {
   resize(gameSize, baseSize, displaySize, resolution) {
     const width = gameSize.width;
     const height = gameSize.height;
-
-    console.log(width, height);
 
     this.parent.setSize(width, height);
     this.sizer.setSize(width, height);

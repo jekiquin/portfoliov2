@@ -9,12 +9,12 @@
   gap: size($factor);
 }
 
-@mixin padding($left, $top: null, $right: null, $bottom: null) {
-  padding: spacing($left, $top, $right, $bottom);
+@mixin padding($top, $right: null, $bottom: null, $left: null) {
+  padding: spacing($top, $right, $bottom, $left);
 }
 
-@mixin margin($left, $top: null, $right: null, $bottom: null) {
-  margin: spacing($left, $top, $right, $bottom);
+@mixin margin($top, $right: null, $bottom: null, $left: null) {
+  margin: spacing($top, $right, $bottom, $left);
 }
 
 @mixin background($url) {

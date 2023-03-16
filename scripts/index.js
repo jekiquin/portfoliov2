@@ -26,7 +26,7 @@ $(document).ready(function () {
     navigation: {
       textColor: '#000',
       bulletsColor: '#000',
-      position: 'bottom',
+      position: 'left',
       tooltips: ['about', 'skills', 'projects'],
     },
     normalScrollElements: null,

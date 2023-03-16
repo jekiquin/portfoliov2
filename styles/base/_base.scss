@@ -9,10 +9,23 @@ html {
   }
 }
 
-// main {
-//   margin-top: calc(2rem + size(2));
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $secondary$primary;
+}
 
-//   @include media(map-get($screen, 'desktop')) {
-//     margin-top: calc(2rem + size(4));
-//   }
-// }
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $secondary;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 20px;
+  border: 1px solid $secondary;
+}

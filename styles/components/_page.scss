@@ -3,9 +3,10 @@
 .page {
   @extend %container;
   padding-top: 5rem;
-  height: 200vh;
+
   box-sizing: border-box;
   background-color: $black1;
+  overflow-y: auto;
 
   &--intro {
     height: 100vh;

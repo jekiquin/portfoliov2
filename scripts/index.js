@@ -25,8 +25,8 @@ $(document).ready(function () {
     loopTop: false,
     css3: true,
     navigation: {
-      textColor: '#000',
-      bulletsColor: '#000',
+      textColor: '#93edc7',
+      bulletsColor: '#93edc7',
       position: 'left',
       tooltips: PAGES,
     },

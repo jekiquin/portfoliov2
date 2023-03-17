@@ -1,5 +1,9 @@
 @use '../abstracts' as *;
 
+.pp-scrollable {
+  overflow-y: auto;
+}
+
 .pp-tooltip {
   color: $accent;
 }

@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.page {
+  @extend %container;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $black1;
+}

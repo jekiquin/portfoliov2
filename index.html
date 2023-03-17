@@ -29,107 +29,56 @@
         <link rel="stylesheet" type="text/css" href="/styles/noscript.css" />
       </noscript>
     </head>
-    <section class="game">
-      <div id="phaser-game" class="game__container">
-        <noscript>
-          <section class="game__fallback">
-            <div class="game__message-container">
-              <div class="game__error">
-                <svg
-                  class="game__error-svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                  <path
-                    class="game__error-path"
-                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM159.3 388.7c-2.6 8.4-11.6 13.2-20 10.5s-13.2-11.6-10.5-20C145.2 326.1 196.3 288 256 288s110.8 38.1 127.3 91.3c2.6 8.4-2.1 17.4-10.5 20s-17.4-2.1-20-10.5C340.5 349.4 302.1 320 256 320s-84.5 29.4-96.7 68.7zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-                  />
-                </svg>
-                <h2>Oh no!</h2>
+
+    <main>
+      <section class="game">
+        <div id="phaser-game" class="game__container">
+          <noscript>
+            <section class="game__fallback">
+              <div class="game__message-container">
+                <div class="game__error">
+                  <svg
+                    class="game__error-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      class="game__error-path"
+                      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM159.3 388.7c-2.6 8.4-11.6 13.2-20 10.5s-13.2-11.6-10.5-20C145.2 326.1 196.3 288 256 288s110.8 38.1 127.3 91.3c2.6 8.4-2.1 17.4-10.5 20s-17.4-2.1-20-10.5C340.5 349.4 302.1 320 256 320s-84.5 29.4-96.7 68.7zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                    />
+                  </svg>
+                  <h2>Oh no!</h2>
+                </div>
+
+                <p>You currently have JavaScript disabled!</p>
+                <p>Please enable it for better experience.</p>
               </div>
-
-              <p>You currently have JavaScript disabled!</p>
-              <p>Please enable it for better experience.</p>
-            </div>
-            <div class="game__logo-container">
-              <img
-                class="game__logo"
-                src="https://labs.phaser.io/assets/sprites/phaser3-logo.png"
-                alt="PhaserJS"
-              />
-            </div>
-          </section>
-        </noscript>
-      </div>
-    </section>
-
-    <header class="header">
-      <nav class="header__nav">
-        <a class="header__image-container" href="/">
-          <img
-            class="header__image"
-            src="./public/images/logo/JI-Scripts.svg"
-            alt="logo"
-          />
-        </a>
-
-        <div class="header__menu" id="menu">
-          <input
-            class="header__menu-checkbox"
-            type="checkbox"
-            id="menu-toggle"
-          />
-          <ul class="header__menu-list">
-            <li
-              data-menuanchor="about"
-              class="header__menu-item header__menu-item--about"
-            >
-              <a class="header__menu-link" href="#about">About</a>
-            </li>
-            <li
-              data-menuanchor="skills"
-              class="header__menu-item header__menu-item--skills"
-            >
-              <a class="header__menu-link" href="#skills">Skills</a>
-            </li>
-            <li
-              data-menuanchor="projects"
-              class="header__menu-item header__menu-item--projects"
-            >
-              <a class="header__menu-link" href="#projects">Projects</a>
-            </li>
-            <li class="header__menu-item">
-              <a
-                class="header__menu-link"
-                href="https://resume.io/r/6VH4eSpE3"
-                target="_blank"
-                >Resume</a
-              >
-            </li>
-          </ul>
-
-          <label class="header__menu-toggle" for="menu-toggle">
-            <div class="header__menu-button">
-              <div class="header__menu-line header__menu-line--top"></div>
-              <div class="header__menu-line header__menu-line--middle"></div>
-              <div class="header__menu-line header__menu-line--bottom"></div>
-            </div>
-          </label>
+              <div class="game__logo-container">
+                <img
+                  class="game__logo"
+                  src="https://labs.phaser.io/assets/sprites/phaser3-logo.png"
+                  alt="PhaserJS"
+                />
+              </div>
+            </section>
+          </noscript>
         </div>
-      </nav>
-    </header>
-
-    <main id="pagepiling">
-      <section class="section pp-scrollable" id="about">
-        <div class="page page--red">about</div>
       </section>
-      <section class="section pp-scrollable" id="skills">
-        <div class="page page--yellow">skills</div>
-      </section>
-      <section class="section pp-scrollable" id="projects">
-        <div class="page page--blue">projects</div>
-      </section>
+      <div id="pagepiling">
+        <section class="section" id="intro">
+          <div class="page">intro</div>
+        </section>
+        <section class="section pp-scrollable" id="about">
+          <div class="page">about</div>
+        </section>
+        <section class="section pp-scrollable" id="skills">
+          <div class="page">skills</div>
+        </section>
+        <section class="section pp-scrollable" id="projects">
+          <div class="page">projects</div>
+        </section>
+      </div>
     </main>
   </body>
 </html>

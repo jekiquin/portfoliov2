@@ -1,5 +1,3 @@
-import Phaser from 'phaser';
-
 import {
   DEFAULT_HEIGHT,
   DEFAULT_WIDTH,

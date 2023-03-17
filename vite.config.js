@@ -10,9 +10,4 @@ export default defineConfig({
       jQuery: 'jquery',
     }),
   ],
-  resolve: {
-    alias: {
-      '@/*': path.resolve(__dirname, './*'),
-    },
-  },
 });

@@ -1,0 +1,20 @@
+@use '../abstracts' as *;
+
+.intro {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+
+  &__anchor {
+    height: 100%;
+    background-color: $black1;
+  }
+
+  @include media(map-get($screen, 'desktop')) {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -17,30 +17,16 @@
       type="module"
       src="/scripts/pagePiling/jquery.pagepiling.js"
     ></script>
+
+    <!-- Actual index.js -->
     <script src="scripts/index.js" type="module" defer></script>
+
     <title>JScripts - This is my world!</title>
   </head>
   <body>
     <head>
       <noscript>
-        <style>
-          html,
-          body,
-          .pp-scrollable {
-            overflow-y: auto;
-            scroll-behavior: smooth;
-          }
-          .header__menu-item.active:before,
-          .header__menu-item.active:after {
-            transform: scaleX(0);
-          }
-          .section {
-            padding-top: 4rem;
-          }
-          .page {
-            margin-top: 0;
-          }
-        </style>
+        <link rel="stylesheet" type="text/css" href="/styles/noscript.css" />
       </noscript>
     </head>
     <section class="game">

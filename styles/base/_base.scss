@@ -12,7 +12,7 @@ html {
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: $secondary$primary;
+  scrollbar-color: $primary $black1;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -21,11 +21,11 @@ html {
 }
 
 *::-webkit-scrollbar-track {
-  background: $secondary;
+  background: $black1;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: $primary;
   border-radius: 20px;
-  border: 1px solid $secondary;
+  border: 1px solid $black1;
 }

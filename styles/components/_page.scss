@@ -2,7 +2,12 @@
 
 .page {
   @extend %container;
-  height: 100vh;
+  padding-top: 4.5rem;
+  height: 200vh;
   box-sizing: border-box;
   background-color: $black1;
+
+  &--intro {
+    height: 100vh;
+  }
 }

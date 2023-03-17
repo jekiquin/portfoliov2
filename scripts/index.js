@@ -20,7 +20,7 @@ $(document).ready(function () {
     anchors: ['intro', 'about', 'skills', 'projects'],
     scrollingSpeed: 700,
     easing: 'swing',
-    loopBottom: false,
+    loopBottom: true,
     loopTop: false,
     css3: true,
     navigation: {

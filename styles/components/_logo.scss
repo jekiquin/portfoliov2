@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  &__container {
+    @extend %justify-align-center;
+  }
+
+  &__link {
+    @include padding(1, 0);
+    height: 4rem;
+    width: auto;
+  }
+
+  &__image {
+    @extend %img;
+  }
+}

@@ -38,7 +38,9 @@ $(document).ready(function () {
 
     //events
     // onLeave: function (index, nextIndex, direction) {},
-    // afterLoad: function (anchorLink, index) {},
+    afterLoad: function (anchorLink, index) {
+      $('.section').scrollTop(0);
+    },
     // afterRender: function () {},
   });
 });

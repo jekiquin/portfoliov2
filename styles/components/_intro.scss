@@ -10,7 +10,19 @@
 
   &__anchor {
     height: 100%;
+    overflow: hidden;
     background-color: $black1;
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    @extend %img;
+    object-fit: cover;
+    object-position: top;
   }
 
   @include media(map-get($screen, 'desktop')) {

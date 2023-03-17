@@ -21,5 +21,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "phaser": "3.55.2"
+  }
 }

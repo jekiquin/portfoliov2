@@ -2,12 +2,12 @@
 
 .logo {
   @extend %justify-align-center;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
-  width: calc(100vw - 8px);
+  width: calc(100% - 8px);
 
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0);
@@ -20,8 +20,8 @@
   }
 
   &__link {
-    @include padding(1, 0);
-    height: 4rem;
+    @include padding(2, 0);
+    height: 3rem;
     width: auto;
   }
 

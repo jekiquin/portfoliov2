@@ -20,15 +20,71 @@
     @include media(map-get($screen, 'desktop')) {
       display: none;
     }
+
+    #{$parent}__toggler:checked ~ & {
+      transform: translate(-50%, 5.5rem);
+      opacity: 1;
+      transition: transform 0.3s ease-in, opacity 0.1s ease-in 0.2s;
+    }
   }
 
   &__toggler {
     display: none;
+  }
 
-    &:checked ~ #{$parent}__container {
-      transform: translate(-50%, 5.5rem);
-      opacity: 1;
-      transition: transform 0.3s ease-in, opacity 0.1s ease-in 0.2s;
+  &__button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    height: 1.2rem;
+    width: 1.2rem;
+    display: block;
+
+    @include media(map-get($screen, 'desktop')) {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover &-line {
+      background-color: $white1;
+    }
+
+    &-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0.2rem;
+      background-color: $accent;
+      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
+        opacity 0.2s ease-in-out 0.25s;
+
+      &--top {
+        top: 0;
+      }
+      &--middle {
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+      &--bottom {
+        bottom: 0;
+      }
+    }
+
+    #{$parent}__toggler:checked ~ & &-line {
+      transition: transform 0.2s ease-in-out 0.25s, opacity 0.2s ease-in-out;
+      &--top {
+        transform: translateY(0.5rem) rotate(45deg);
+      }
+      &--middle {
+        opacity: 0;
+      }
+      &--bottom {
+        transform: translateY(-0.5rem) rotate(-45deg);
+      }
     }
   }
 

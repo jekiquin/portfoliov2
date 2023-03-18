@@ -1,39 +1,4 @@
 @use '../abstracts' as *;
 
 .menu-button {
-  position: relative;
-  background-color: transparent;
-  border: none;
-  height: 1.2rem;
-  width: 1.2rem;
-  display: block;
-
-  @include media(map-get($screen, 'desktop')) {
-    display: none;
-  }
-
-  &:hover &__line {
-    cursor: pointer;
-    background-color: $white1;
-  }
-
-  &__line {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 0.2rem;
-    background-color: $accent;
-    transition: background-color 0.2s ease-in-out;
-
-    &--top {
-      top: 0;
-    }
-    &--middle {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &--bottom {
-      bottom: 0;
-    }
-  }
 }

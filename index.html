@@ -126,33 +126,33 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </svg>
         </a>
 
-        <label class="menu-button" for="menu-toggle" tabindex="0">
-          <div class="menu-button__line menu-button__line--top"></div>
-          <div class="menu-button__line menu-button__line--middle"></div>
-          <div class="menu-button__line menu-button__line--bottom"></div>
-        </label>
+        <nav class="menu">
+          <input class="menu__toggler" type="checkbox" id="menu-toggle" />
+          <label class="menu__button" for="menu-toggle" tabindex="0">
+            <div class="menu__button-line menu__button-line--top"></div>
+            <div class="menu__button-line menu__button-line--middle"></div>
+            <div class="menu__button-line menu__button-line--bottom"></div>
+          </label>
+
+          <div class="menu__container">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a class="menu__link" href="#about">about</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#skills">skills</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#projects">projects</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">resume</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
-
-    <nav class="menu">
-      <input class="menu__toggler" type="checkbox" id="menu-toggle" />
-      <div class="menu__container">
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a class="menu__link" href="#about">about</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#skills">skills</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#projects">projects</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">resume</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
 
     <main>
       <section class="game">

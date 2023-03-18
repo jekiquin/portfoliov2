@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
+@use 'sass:math';
 
 .menu {
   $parent: &;
 
   &__container {
-    @extend %glassmorphic;
-    background: rgba($black1, 0.8);
+    background-color: $black1;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     position: absolute;
@@ -85,6 +85,50 @@
       &--bottom {
         transform: translateY(-0.5rem) rotate(-45deg);
       }
+    }
+  }
+
+  &__item {
+    @extend %justify-align-center;
+    @include padding(1, 2);
+    $overlap: 6px;
+    $half-overlap: math.div($overlap, 2);
+
+    border-radius: 4px;
+    position: relative;
+    background-color: $black1;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: calc(100% + $overlap);
+      height: calc(50% + $half-overlap);
+      background-color: $accent;
+      transform: scale(0, 1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:after {
+      transform-origin: left;
+      bottom: -$half-overlap;
+      left: -$half-overlap;
+      transition-delay: 0.35s;
+      border-radius: 0 0 4px 4px;
+    }
+    &:before {
+      transform-origin: right;
+      top: -$half-overlap;
+      right: -$half-overlap;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &.active:after,
+    &.active:before,
+    &:hover:after,
+    &:hover:before {
+      transform: scale(1, 1);
     }
   }
 

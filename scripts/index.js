@@ -1,13 +1,11 @@
 import '../styles/styles.scss';
-import { config } from './game/index.js';
+import { initGame } from './game/index.js';
 import $ from 'jquery';
 import { PAGES } from './utils/constants';
+import { init, initThreeScene } from './three';
 
+// adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
-
-const initGame = () => {
-  const game = new Phaser.Game(config);
-};
 
 // ------------------------ Event listeners ------------------------
 
@@ -21,7 +19,7 @@ $(document).ready(function () {
     anchors: PAGES,
     scrollingSpeed: 700,
     easing: 'swing',
-    loopBottom: true,
+    loopBottom: false,
     loopTop: false,
     css3: true,
     navigation: {
@@ -31,7 +29,7 @@ $(document).ready(function () {
       tooltips: PAGES,
     },
     normalScrollElements: null,
-    normalScrollElementTouchThreshold: 5,
+    normalScrollElementTouchThreshold: 3,
     touchSensitivity: 5,
     keyboardScrolling: true,
     sectionSelector: '.section',
@@ -39,8 +37,12 @@ $(document).ready(function () {
 
     //events
     // onLeave: function (index, nextIndex, direction) {},
-    afterLoad: function (anchorLink, index) {
+    afterLoad: function (anchorLink) {
       $(`.section#${anchorLink}`).scrollTop(0);
+
+      if (anchorLink === 'about') {
+        initThreeScene();
+      }
     },
     // afterRender: function () {},
   });
@@ -48,4 +50,8 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   initGame();
+});
+
+addEventListener('resize', () => {
+  init();
 });

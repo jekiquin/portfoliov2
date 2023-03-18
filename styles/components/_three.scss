@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+
+.about {
+  display: grid;
+  grid-template-rows: 50vh 1fr;
+  grid-template-columns: 1fr;
+  min-height: calc(100vh + 5rem);
+
+  @include media(map-get($screen, 'tablet')) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__three {
+    @extend %justify-align-center;
+    height: auto;
+    max-width: 100vw;
+    flex-shrink: 1;
+
+    @include media(map-get($screen, 'tablet')) {
+      max-width: 50vw;
+    }
+  }
+}

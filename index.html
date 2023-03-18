@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- todo: need to install phaser -->
+
+    <!-- phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!-- three js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
+      integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
 
     <!-- page piling -->
     <link
@@ -228,7 +238,10 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
         </section>
 
         <section class="section pp-scrollable" id="about">
-          <div class="page">about</div>
+          <div class="page about">
+            <div class="about__three"></div>
+            <div class="about__description">Description</div>
+          </div>
         </section>
 
         <section class="section pp-scrollable" id="skills">

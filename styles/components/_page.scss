@@ -3,8 +3,9 @@
 .page {
   @extend %container;
   padding-top: $header-size;
-
   box-sizing: border-box;
   background-color: $black1;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 10rem;
 }

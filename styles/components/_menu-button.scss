@@ -6,6 +6,7 @@
   border: none;
   height: 1.2rem;
   width: 1.2rem;
+  display: block;
 
   @include media(map-get($screen, 'desktop')) {
     display: none;
@@ -13,7 +14,7 @@
 
   &:hover &__line {
     cursor: pointer;
-    background: $white1;
+    background-color: $white1;
   }
 
   &__line {
@@ -21,7 +22,8 @@
     left: 0;
     right: 0;
     height: 0.2rem;
-    background: $accent;
+    background-color: $accent;
+    transition: background-color 0.2s ease-in-out;
 
     &--top {
       top: 0;

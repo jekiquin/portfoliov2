@@ -18,3 +18,7 @@ html {
 *::-webkit-scrollbar {
   width: 0;
 }
+
+*:focus-visible {
+  outline-color: transparent;
+}

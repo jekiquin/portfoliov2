@@ -16,6 +16,11 @@
   display: flex;
 }
 
+%align-center {
+  @extend %flex;
+  align-items: center;
+}
+
 %justify-center {
   @extend %flex;
   justify-content: center;

@@ -1,6 +1,7 @@
 import '../styles/styles.scss';
 import { config } from './game/index.js';
 import $ from 'jquery';
+import { PAGES } from './utils/constants';
 
 window.$ = $;
 
@@ -17,17 +18,17 @@ $(document).ready(function () {
     direction: 'vertical',
     verticalCentered: true,
     sectionsColor: [],
-    anchors: ['about', 'skills', 'projects'],
+    anchors: PAGES,
     scrollingSpeed: 700,
     easing: 'swing',
-    loopBottom: false,
+    loopBottom: true,
     loopTop: false,
     css3: true,
     navigation: {
-      textColor: '#000',
-      bulletsColor: '#000',
+      textColor: '#93edc7',
+      bulletsColor: '#93edc7',
       position: 'left',
-      tooltips: ['about', 'skills', 'projects'],
+      tooltips: PAGES,
     },
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 5,
@@ -38,7 +39,9 @@ $(document).ready(function () {
 
     //events
     // onLeave: function (index, nextIndex, direction) {},
-    // afterLoad: function (anchorLink, index) {},
+    afterLoad: function (anchorLink, index) {
+      $(`.section#${anchorLink}`).scrollTop(0);
+    },
     // afterRender: function () {},
   });
 });

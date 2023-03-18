@@ -8,7 +8,7 @@ $screen: (
   ultra: 1800px,
 );
 
-$spacing: 8px;
+$spacing: 0.5rem;
 
 $game-width: 540px;
 $game-height: 720px;
@@ -19,3 +19,5 @@ $status: (
   warning: $warning,
   error: $error,
 );
+
+$header-size: 5rem;

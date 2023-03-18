@@ -24,112 +24,221 @@
     <title>JScripts - This is my world!</title>
   </head>
   <body>
+    <!-- this is to apply noscript styling -->
     <head>
       <noscript>
         <link rel="stylesheet" type="text/css" href="/styles/noscript.css" />
       </noscript>
     </head>
-    <section class="game">
-      <div id="phaser-game" class="game__container">
-        <noscript>
-          <section class="game__fallback">
-            <div class="game__message-container">
-              <div class="game__error">
-                <svg
-                  class="game__error-svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                  <path
-                    class="game__error-path"
-                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM159.3 388.7c-2.6 8.4-11.6 13.2-20 10.5s-13.2-11.6-10.5-20C145.2 326.1 196.3 288 256 288s110.8 38.1 127.3 91.3c2.6 8.4-2.1 17.4-10.5 20s-17.4-2.1-20-10.5C340.5 349.4 302.1 320 256 320s-84.5 29.4-96.7 68.7zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-                  />
-                </svg>
-                <h2>Oh no!</h2>
-              </div>
 
-              <p>You currently have JavaScript disabled!</p>
-              <p>Please enable it for better experience.</p>
-            </div>
-            <div class="game__logo-container">
-              <img
-                class="game__logo"
-                src="https://labs.phaser.io/assets/sprites/phaser3-logo.png"
-                alt="PhaserJS"
+    <header class="nav">
+      <div class="nav__container">
+        <a class="nav__link" href="/">
+          <svg
+            class="nav__logo"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="652.000000pt"
+            height="185.000000pt"
+            viewBox="0 0 652.000000 185.000000"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <g
+              transform="translate(0.000000,185.000000) scale(0.100000,-0.100000)"
+            >
+              <path
+                d="M3640 1770 c-111 -16 -220 -40 -345 -76 -228 -67 -387 -145 -463
+-228 -35 -37 -42 -53 -42 -85 0 -80 55 -110 334 -176 166 -39 257 -75 287
+-114 l21 -26 -104 -7 c-229 -17 -333 -68 -296 -146 23 -47 73 -67 168 -67 73
+0 93 4 144 29 33 16 79 49 103 74 43 46 44 46 79 33 40 -14 58 -5 52 25 -2 12
+-19 25 -45 34 -33 11 -44 20 -48 42 -8 34 -73 94 -130 118 -49 21 -141 46
+-306 85 -205 48 -241 87 -152 165 131 115 541 249 816 266 102 7 147 -4 147
+-35 0 -36 -91 -140 -246 -282 -144 -131 -176 -171 -159 -198 10 -18 43 -12 50
+8 3 10 68 75 144 144 191 174 256 253 266 324 9 65 -29 93 -138 98 -40 2 -101
+0 -137 -5z m-255 -800 c-70 -73 -272 -96 -293 -32 -9 28 117 58 252 61 l70 1
+-29 -30z"
               />
-            </div>
-          </section>
-        </noscript>
-      </div>
-    </section>
-
-    <header class="header">
-      <nav class="header__nav">
-        <a class="header__image-container" href="/">
-          <img
-            class="header__image"
-            src="./public/images/logo/JI-Scripts.svg"
-            alt="logo"
-          />
+              <path
+                d="M5893 1663 c-27 -37 -64 -89 -81 -114 -30 -45 -33 -46 -93 -53 -34
+-3 -125 -6 -203 -7 -78 -1 -217 -6 -310 -12 -141 -10 -171 -15 -180 -29 -24
+-38 1 -41 221 -30 114 7 273 14 351 17 l144 5 -31 -52 c-17 -29 -64 -109 -103
+-178 -68 -118 -75 -127 -137 -166 -85 -54 -138 -80 -179 -89 l-34 -7 31 42
+c41 57 54 106 38 139 -11 23 -18 26 -68 26 -46 0 -66 -6 -107 -32 l-51 -31 36
+65 c35 63 35 66 18 79 -25 19 -37 7 -90 -91 l-45 -82 -90 -42 c-103 -48 -245
+-96 -313 -106 -47 -7 -47 -7 -47 21 0 16 9 49 20 73 15 33 17 47 9 57 -28 34
+-88 -53 -89 -129 0 -42 35 -87 67 -87 53 0 228 54 379 117 7 2 -26 -67 -72
+-154 -47 -87 -150 -288 -230 -447 -130 -258 -144 -291 -130 -304 13 -13 17
+-13 31 -2 10 8 75 130 146 272 178 355 275 535 317 587 l35 43 14 -26 c17 -33
+47 -41 159 -41 86 0 95 2 172 40 l80 40 -33 -60 c-158 -288 -425 -815 -425
+-839 0 -20 14 -28 35 -20 9 4 68 111 132 238 182 364 398 765 546 1015 l79
+134 339 -5 c283 -4 341 -3 351 9 9 11 8 17 -4 29 -12 12 -69 16 -331 21 l-316
+6 65 94 c64 93 74 125 43 131 -11 2 -35 -22 -66 -65z m-637 -618 c-15 -25 -42
+-55 -59 -66 -78 -48 -118 15 -46 73 42 34 110 60 123 48 5 -5 -3 -28 -18 -55z"
+              />
+              <path
+                d="M2193 1585 c-184 -33 -283 -93 -283 -170 0 -72 74 -114 250 -140 134
+-21 236 -20 244 2 4 9 3 20 -1 24 -5 5 -60 13 -123 19 -206 19 -315 56 -308
+102 13 94 424 158 626 98 59 -18 110 -64 118 -106 12 -64 -59 -204 -172 -337
+-28 -35 -32 -36 -64 -27 -19 6 -87 10 -150 10 -247 0 -460 -62 -561 -162 -74
+-74 -72 -150 4 -191 37 -19 56 -22 157 -21 96 1 128 5 195 27 100 33 217 99
+310 176 62 50 71 55 67 35 -3 -16 1 -26 13 -30 27 -11 49 21 50 69 0 35 7 53
+36 88 290 355 213 551 -216 548 -66 0 -152 -7 -192 -14z m230 -581 c20 -4 37
+-10 37 -15 0 -18 -161 -133 -245 -174 -112 -56 -187 -75 -290 -75 -86 0 -147
+21 -153 52 -6 29 67 97 142 132 82 39 185 64 312 75 122 11 153 12 197 5z"
+              />
+              <path
+                d="M137 1539 c-20 -11 -49 -39 -65 -62 l-27 -42 0 -311 0 -310 28 -43
+c56 -85 27 -81 591 -81 l499 0 42 25 c24 13 53 42 66 62 24 38 24 39 24 348
+l0 310 -25 35 c-65 92 -48 90 -609 90 -465 -1 -488 -2 -524 -21z m991 -147 c9
+-7 12 -68 10 -273 l-3 -264 -460 -3 c-424 -2 -461 -1 -472 15 -10 12 -13 81
+-13 259 0 207 2 245 16 258 14 14 69 16 462 16 246 0 453 -4 460 -8z"
+              />
+              <path
+                d="M432 1170 c-25 -24 -28 -58 -8 -86 14 -18 28 -19 246 -19 218 0 232
+1 246 19 21 29 17 59 -9 84 -22 21 -31 22 -238 22 -203 0 -216 -1 -237 -20z"
+              />
+              <path
+                d="M4690 1324 c-51 -48 -65 -89 -29 -89 22 0 132 102 126 118 -9 29 -47
+18 -97 -29z"
+              />
+              <path
+                d="M4315 1169 c-29 -27 -45 -36 -45 -26 0 17 -22 28 -37 19 -6 -4 -16
+-24 -22 -44 -11 -33 -22 -42 -102 -83 -146 -75 -314 -107 -367 -69 -26 18 -27
+34 -7 74 19 37 42 38 55 5 20 -52 67 -19 49 34 -31 87 -138 57 -170 -47 -9
+-33 -9 -47 1 -71 21 -52 54 -66 150 -66 95 1 194 26 292 76 l57 29 -15 -42
+c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
+13 -40 8 -59 32 -92 65 -88 34 4 41 35 13 54 -12 9 -21 26 -21 40 0 14 -7 40
+-14 59 -22 51 -62 49 -121 -6z"
+              />
+              <path
+                d="M5743 1125 c-61 -26 -51 -94 20 -132 l32 -17 -40 -15 c-161 -61 -210
+-126 -145 -191 58 -58 203 19 257 135 l18 40 160 40 c144 36 160 42 163 63 5
+34 -13 33 -204 -14 l-141 -35 -51 35 c-28 18 -48 37 -45 40 4 3 28 6 54 6 32
+0 49 5 53 15 15 40 -66 59 -131 30z m58 -224 c-27 -50 -111 -101 -146 -87 -36
+14 -5 42 92 82 32 13 59 24 61 24 1 0 -2 -8 -7 -19z"
+              />
+              <path
+                d="M110 582 c-46 -23 -70 -72 -70 -145 0 -74 20 -121 62 -147 32 -19 49
+-20 568 -20 519 0 536 1 568 20 42 26 62 73 62 147 0 73 -24 122 -70 145 -32
+16 -80 18 -560 18 -480 0 -528 -2 -560 -18z"
+              />
+            </g>
+          </svg>
         </a>
 
-        <div class="header__menu" id="menu">
-          <input
-            class="header__menu-checkbox"
-            type="checkbox"
-            id="menu-toggle"
-          />
-          <ul class="header__menu-list">
-            <li
-              data-menuanchor="about"
-              class="header__menu-item header__menu-item--about"
-            >
-              <a class="header__menu-link" href="#about">About</a>
-            </li>
-            <li
-              data-menuanchor="skills"
-              class="header__menu-item header__menu-item--skills"
-            >
-              <a class="header__menu-link" href="#skills">Skills</a>
-            </li>
-            <li
-              data-menuanchor="projects"
-              class="header__menu-item header__menu-item--projects"
-            >
-              <a class="header__menu-link" href="#projects">Projects</a>
-            </li>
-            <li class="header__menu-item">
-              <a
-                class="header__menu-link"
-                href="https://resume.io/r/6VH4eSpE3"
-                target="_blank"
-                >Resume</a
-              >
-            </li>
-          </ul>
-
-          <label class="header__menu-toggle" for="menu-toggle">
-            <div class="header__menu-button">
-              <div class="header__menu-line header__menu-line--top"></div>
-              <div class="header__menu-line header__menu-line--middle"></div>
-              <div class="header__menu-line header__menu-line--bottom"></div>
-            </div>
+        <nav class="menu">
+          <input class="menu__toggler" type="checkbox" id="menu-toggle" />
+          <label class="menu__button" for="menu-toggle" tabindex="0">
+            <div class="menu__button-line menu__button-line--top"></div>
+            <div class="menu__button-line menu__button-line--middle"></div>
+            <div class="menu__button-line menu__button-line--bottom"></div>
           </label>
-        </div>
-      </nav>
+
+          <div class="menu__container">
+            <ul class="menu__list" id="menu">
+              <li data-menuanchor="about" class="menu__item">
+                <a class="menu__link" href="#about">about</a>
+              </li>
+              <li data-menuanchor="skills" class="menu__item">
+                <a class="menu__link" href="#skills">skills</a>
+              </li>
+              <li data-menuanchor="projects" class="menu__item">
+                <a class="menu__link" href="#projects">projects</a>
+              </li>
+              <li class="menu__item">
+                <a
+                  class="menu__link"
+                  href="https://resume.io/r/6VH4eSpE3"
+                  target="_blank"
+                  >resume</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </header>
 
-    <main id="pagepiling">
-      <section class="section pp-scrollable" id="about">
-        <div class="page page--red">about</div>
+    <main>
+      <section class="game">
+        <div id="phaser-game" class="game__container">
+          <noscript>
+            <section class="game__fallback">
+              <div class="game__message-container">
+                <div class="game__error">
+                  <svg
+                    class="game__error-svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512"
+                  >
+                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      class="game__error-path"
+                      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM159.3 388.7c-2.6 8.4-11.6 13.2-20 10.5s-13.2-11.6-10.5-20C145.2 326.1 196.3 288 256 288s110.8 38.1 127.3 91.3c2.6 8.4-2.1 17.4-10.5 20s-17.4-2.1-20-10.5C340.5 349.4 302.1 320 256 320s-84.5 29.4-96.7 68.7zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                    />
+                  </svg>
+                  <h2>Oh no!</h2>
+                </div>
+
+                <p>You currently have JavaScript disabled!</p>
+                <p>Please enable it for better experience.</p>
+              </div>
+              <div class="game__logo-container">
+                <img
+                  class="game__logo"
+                  src="https://labs.phaser.io/assets/sprites/phaser3-logo.png"
+                  alt="PhaserJS"
+                />
+              </div>
+            </section>
+          </noscript>
+        </div>
       </section>
-      <section class="section pp-scrollable" id="skills">
-        <div class="page page--yellow">skills</div>
-      </section>
-      <section class="section pp-scrollable" id="projects">
-        <div class="page page--blue">projects</div>
-      </section>
+
+      <div id="pagepiling">
+        <section class="section pp-scrollable" id="intro">
+          <div class="page intro">
+            <a class="intro__anchor" href="#about">
+              <h2 class="intro__title">About me</h2>
+              <div class="intro__image-container">
+                <img class="intro__image" src="images/me.webp" alt="skills" />
+              </div>
+            </a>
+            <a class="intro__anchor" href="#skills">
+              <h2 class="intro__title">Skills</h2>
+              <div class="intro__image-container">
+                <img
+                  class="intro__image"
+                  src="images/skills.webp"
+                  alt="skills"
+                />
+              </div>
+            </a>
+            <a class="intro__anchor" href="#projects">
+              <h2 class="intro__title">Projects</h2>
+              <div class="intro__image-container">
+                <img
+                  class="intro__image"
+                  src="images/projects.webp"
+                  alt="skills"
+                />
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section class="section pp-scrollable" id="about">
+          <div class="page">about</div>
+        </section>
+
+        <section class="section pp-scrollable" id="skills">
+          <div class="page">skills</div>
+        </section>
+
+        <section class="section pp-scrollable" id="projects">
+          <div class="page">projects</div>
+        </section>
+      </div>
     </main>
   </body>
 </html>

@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.page {
+  @extend %container;
+  padding-top: $header-size;
+
+  box-sizing: border-box;
+  background-color: $black1;
+  overflow-y: auto;
+}

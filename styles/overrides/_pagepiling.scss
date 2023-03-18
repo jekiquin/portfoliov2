@@ -4,7 +4,25 @@
   color: $accent;
 }
 
+#pp-nav {
+  &.left {
+    left: -100px;
+
+    @include media(map-get($screen, 'desktop')) {
+      left: 17px;
+    }
+  }
+
+  &.right {
+    right: -100px;
+
+    @include media(map-get($screen, 'desktop')) {
+      right: 17px;
+    }
+  }
+}
+
 #pp-nav li .active span,
 .pp-slidesNav .active span {
-  background: $accent;
+  background: $primary;
 }

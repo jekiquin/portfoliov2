@@ -5,6 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+      integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!-- phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
 
@@ -241,7 +256,7 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
 
         <section class="section pp-scrollable" id="about">
           <div class="page about">
-            <div class="about__image-container card">
+            <article class="about__image-container card">
               <div class="about__three card__side card__side--front"></div>
               <div class="card__side card__side--back">
                 <div class="about__avatar">
@@ -252,11 +267,48 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
                   />
                 </div>
               </div>
-            </div>
+            </article>
 
-            <div class="about__description">
+            <article class="about__description">
               <h1>About Me</h1>
-            </div>
+
+              <div class="social">
+                <ul class="social__list">
+                  <li class="social__item social__item--linkedin">
+                    <a class="social__link" href="#">
+                      <i
+                        class="social__icon fa-brands fa-linkedin-in"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--github personal">
+                    <a class="social__link" href="#">
+                      <i
+                        class="social__icon fa-brands fa-github-alt"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--github work">
+                    <a class="social__link" href="#">
+                      <i
+                        class="social__icon fa-brands fa-github-alt"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--google">
+                    <a class="social__link" href="#">
+                      <i
+                        class="social__icon fa-brands fa-google"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
           </div>
         </section>
 

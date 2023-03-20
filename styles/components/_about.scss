@@ -18,7 +18,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @include media(map-get($screen, 'wide')) {
+  @include media(map-get($screen, 'ultra')) {
     grid-template-columns: 1fr 2fr;
   }
 
@@ -87,7 +87,7 @@
     @extend %justify-align-center;
     height: 100%;
     width: 100%;
-    flex-shrink: 1;
+
     transition: all 0.8s ease;
     position: absolute;
     inset: 0;

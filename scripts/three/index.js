@@ -34,8 +34,7 @@ const loadModel = async (scene, camera, controls) => {
 
 function animate(scene, camera, model, controls) {
   requestAnimationFrame(() => animate(scene, camera, model, controls));
-  model.rotation.y += 0.01;
-  //   model.rotation.y += 0.01;
+  model.rotation.y += 0.005;
   controls.update();
   renderer.render(scene, camera);
 }

@@ -40,7 +40,6 @@
   &__title {
     @include margin(0);
     @include padding(3, 0);
-    font-family: 'Marvin Visions Variable';
     position: absolute;
     top: -1px; //removing gap from top
     left: 0;

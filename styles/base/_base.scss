@@ -2,11 +2,6 @@
 
 html {
   @extend %normal-theme--dark;
-  font-size: 0.875rem;
-
-  @include media(map-get($screen, 'desktop')) {
-    font-size: 1rem;
-  }
 }
 
 /* Works on Firefox */

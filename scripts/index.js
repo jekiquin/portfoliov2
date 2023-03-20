@@ -3,6 +3,7 @@ import { initGame } from './game/index.js';
 import $ from 'jquery';
 import { PAGES } from './utils/constants';
 import { init, initThreeScene } from './three';
+import { removeAvatarAnimation, showAvatarAnimation } from './page/animations';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -36,12 +37,16 @@ $(document).ready(function () {
     animateAnchor: false,
 
     //events
-    // onLeave: function (index, nextIndex, direction) {},
+    onLeave: function (index, nextIndex, direction) {
+      if (PAGES[index - 1] === 'about') {
+        removeAvatarAnimation();
+      }
+    },
     afterLoad: function (anchorLink) {
       $(`.section#${anchorLink}`).scrollTop(0);
 
       if (anchorLink === 'about') {
-        initThreeScene();
+        showAvatarAnimation();
       }
     },
     // afterRender: function () {},
@@ -50,6 +55,7 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   initGame();
+  initThreeScene();
 });
 
 addEventListener('resize', () => {

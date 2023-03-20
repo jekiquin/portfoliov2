@@ -41,6 +41,7 @@
 
   &__avatar {
     $border: 2rem;
+    max-width: 480px;
     width: 100%;
     height: fit;
     transform: scaleX(-1);

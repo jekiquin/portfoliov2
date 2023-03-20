@@ -8,20 +8,18 @@ export const init = async () => {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(76, width / height, 0.1, 1000);
-  const controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableZoom = false;
 
-  await loadModel(scene, camera, controls);
+  await loadModel(scene, camera);
 };
 
-const loadModel = async (scene, camera, controls) => {
+const loadModel = async (scene, camera) => {
   const loader = new THREE.GLTFLoader();
   const data = await loader.loadAsync('model/me.glb');
 
   const box = new THREE.Box3().setFromObject(data.scene);
   const center = new THREE.Vector3();
   box.getCenter(center);
-  data.scene.position.sub(center); // center the model
+  // data.scene.position.sub(center); // center the model
 
   scene.add(data.scene);
   const light = new THREE.AmbientLight(0xfefefe);
@@ -29,13 +27,12 @@ const loadModel = async (scene, camera, controls) => {
   scene.add(light);
 
   camera.position.set(0, 1, 1.5);
-  animate(scene, camera, data.scene, controls);
+  animate(scene, camera, data.scene);
 };
 
-function animate(scene, camera, model, controls) {
-  requestAnimationFrame(() => animate(scene, camera, model, controls));
+function animate(scene, camera, model) {
+  requestAnimationFrame(() => animate(scene, camera, model));
   model.rotation.y += 0.005;
-  controls.update();
   renderer.render(scene, camera);
 }
 

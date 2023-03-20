@@ -1,6 +1,12 @@
 @use '../abstracts/' as *;
 
 .about {
+  $gradient: linear-gradient(
+    25deg,
+    rgba(73, 125, 202, 1) 0%,
+    rgba(162, 36, 204, 1) 60%
+  );
+
   display: grid;
   grid-template-rows: 50vh 1fr;
   grid-template-columns: 1fr;
@@ -24,15 +30,12 @@
 
   &__three {
     background: rgb(73, 125, 202);
-    background: linear-gradient(
-      25deg,
-      rgba(73, 125, 202, 1) 0%,
-      rgba(162, 36, 204, 1) 60%
-    );
+    background: $gradient;
     border-radius: 48% 52% 70% 30% / 86% 76% 24% 14%;
   }
 
   &__avatar {
+    $border: 2rem;
     width: 100%;
     height: fit;
     transform: scaleX(-1);
@@ -46,24 +49,20 @@
       bottom: 0;
       left: 0;
       right: 0;
-      border-image-source: linear-gradient(
-        25deg,
-        rgba(73, 125, 202, 1) 0%,
-        rgba(162, 36, 204, 1) 60%
-      );
+      border-image-source: $gradient;
 
       border-style: solid;
     }
 
     &::before {
       z-index: -1;
-      border-width: 1rem 0 0;
+      border-width: $border 0 0;
       border-image-slice: 1 0 0;
     }
 
     &::after {
       z-index: 2;
-      border-width: 0 1rem 1rem;
+      border-width: 0 $border $border;
       border-image-slice: 0 1 1;
     }
 

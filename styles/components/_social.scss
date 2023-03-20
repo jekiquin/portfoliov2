@@ -42,8 +42,6 @@
       position: absolute;
       transform: 0.5s;
       background: #b1b1b1;
-
-      text-align: center;
     }
 
     &::before {
@@ -55,11 +53,13 @@
     }
 
     &::after {
+      @extend %justify-align-center;
       bottom: -20px;
       left: -10px;
       height: 20px;
       width: 100%;
       color: $black1;
+      font-size: 0.8rem;
       transform: rotate(0deg) skewX(-45deg);
 
       @include media(map-get($screen, 'desktop')) {

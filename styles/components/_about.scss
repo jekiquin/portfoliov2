@@ -77,6 +77,12 @@
       height: auto;
     }
   }
+
+  &__context {
+    & p {
+      transform: translateX(150%);
+    }
+  }
 }
 
 .card {

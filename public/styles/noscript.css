@@ -14,3 +14,7 @@ body,
 .page {
   padding-top: 1rem;
 }
+
+.about__context p {
+  transform: translateX(0);
+}

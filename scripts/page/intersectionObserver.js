@@ -4,7 +4,7 @@ const cta = document.querySelector('.skills__cta');
 
 const options = {
   root: intersectionWindow,
-  rootMargin: '-40% 0% -40%',
+  rootMargin: '-40% 0% -35%',
   threshold: [0, 1],
 };
 

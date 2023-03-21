@@ -18,3 +18,7 @@ body,
 .about__context p {
   transform: translateX(0);
 }
+
+.about__show-dog {
+  display: none;
+}

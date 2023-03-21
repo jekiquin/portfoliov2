@@ -1,12 +1,11 @@
 @use '../abstracts/' as *;
+$gradient: linear-gradient(
+  25deg,
+  rgba(73, 125, 202, 1) 0%,
+  rgba(162, 36, 204, 1) 60%
+);
 
 .about {
-  $gradient: linear-gradient(
-    25deg,
-    rgba(73, 125, 202, 1) 0%,
-    rgba(162, 36, 204, 1) 60%
-  );
-
   display: grid;
   grid-template-rows: 50vh 1fr;
   grid-template-columns: 1fr;
@@ -29,14 +28,8 @@
     opacity: 0;
 
     &--show {
-      animation: show-avatar 0.8s ease 0.1s 1 normal forwards;
+      animation: fade-in 0.8s ease 0.1s 1 normal forwards;
     }
-  }
-
-  &__three {
-    background: rgb(73, 125, 202);
-    background: $gradient;
-    border-radius: 48% 52% 70% 30% / 86% 76% 24% 14%;
   }
 
   &__avatar {
@@ -83,6 +76,38 @@
       transform: translateX(150%);
     }
   }
+
+  &__dog {
+    opacity: 0;
+
+    &-img {
+      height: 100%;
+    }
+  }
+
+  &__show-dog {
+    position: absolute;
+    background-color: transparent;
+    outline-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: $primary;
+    top: 7rem;
+    left: 1rem;
+    opacity: 0;
+    animation: fade-in 10s ease 5s 1 normal forwards;
+  }
+
+  &__resume {
+    display: inline-block;
+    text-decoration: none;
+    color: $accent;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
 }
 
 .card {
@@ -94,12 +119,17 @@
     @extend %justify-align-center;
     height: 100%;
     width: 100%;
-
     transition: all 0.8s ease;
     position: absolute;
     inset: 0;
     backface-visibility: hidden;
     overflow: hidden;
+
+    &--front {
+      background: rgb(73, 125, 202);
+      background: $gradient;
+      border-radius: 48% 52% 70% 30% / 86% 76% 24% 14%;
+    }
 
     &--back {
       transform: rotateY(180deg);

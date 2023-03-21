@@ -9,6 +9,7 @@ import {
   addDescriptionsAnimation,
   removeDescriptionsAnimation,
 } from './page/animations';
+import { initShowDog } from './page/dog';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -61,6 +62,7 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  initShowDog();
   initGame();
   initThreeScene();
 });

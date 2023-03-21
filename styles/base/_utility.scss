@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.bold {
+  font-family: 'Marvin Visions Variable', 'Playfair Display SC', 'sans-serif';
+}
+
+.warning {
+  color: $error;
+}
+
+.info {
+  color: $info;
+}

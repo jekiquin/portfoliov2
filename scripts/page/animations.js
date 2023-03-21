@@ -30,17 +30,3 @@ export const removeDescriptionsAnimation = () => {
     context.style.animation = '';
   });
 };
-
-// -------------------------- skills page ------------------------------------
-const skillsSection = document.querySelector('.skills');
-const skillsSectionAnimateShow = 'skills--show';
-
-export const showSkillsSection = () => {
-  skillsSection.classList.add(skillsSectionAnimateShow);
-};
-
-export const hideSkillsSection = () => {
-  if (skillsSection.classList.contains(skillsSectionAnimateShow)) {
-    skillsSection.classList.remove(skillsSectionAnimateShow);
-  }
-};

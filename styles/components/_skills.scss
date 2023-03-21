@@ -1,13 +1,25 @@
 @use '../abstracts' as *;
 
 .skills {
-  overflow-y: auto;
-  background-color: $black1;
   background: url('images/skillsbg.webp');
   background-size: cover;
   background-position: center;
 
   &__page {
     background-color: transparent;
+    position: relative;
+    padding: 35vh 0 65vh;
+
+    border: solid 1px white;
+  }
+
+  &__intersection {
+    border: solid 1px red;
+    position: sticky;
+    width: 200vw;
+    height: 35vh;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
   }
 }

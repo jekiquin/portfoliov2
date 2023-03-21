@@ -8,6 +8,8 @@ import {
   showAvatarAnimation,
   addDescriptionsAnimation,
   removeDescriptionsAnimation,
+  showSkillsSection,
+  hideSkillsSection,
 } from './page/animations';
 import { initShowDog } from './page/dog';
 
@@ -48,6 +50,9 @@ $(document).ready(function () {
         removeAvatarAnimation();
         removeDescriptionsAnimation();
       }
+      if (PAGES[index - 1] === 'skills') {
+        hideSkillsSection();
+      }
     },
     afterLoad: function (anchorLink) {
       $(`.section#${anchorLink}`).scrollTop(0);
@@ -55,6 +60,11 @@ $(document).ready(function () {
       if (anchorLink === 'about') {
         showAvatarAnimation();
         addDescriptionsAnimation();
+      }
+
+      if (anchorLink === 'skills') {
+        console.log('skills in');
+        showSkillsSection();
       }
     },
     // afterRender: function () {},

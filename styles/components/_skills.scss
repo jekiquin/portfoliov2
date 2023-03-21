@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.skills {
+  overflow-y: auto;
+  background-color: $black1;
+  background: url('images/skillsbg.webp');
+  background-size: cover;
+  background-position: center;
+
+  &__page {
+    background-color: transparent;
+  }
+}

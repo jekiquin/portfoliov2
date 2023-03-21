@@ -4,13 +4,16 @@ body,
   overflow-y: auto;
   scroll-behavior: smooth;
 }
+
 .header__menu-item.active:before,
 .header__menu-item.active:after {
   transform: scaleX(0);
 }
+
 .section {
   padding-top: 4rem;
 }
+
 .page {
   padding-top: 1rem;
 }
@@ -21,4 +24,23 @@ body,
 
 .about__show-dog {
   display: none;
+}
+
+.card {
+  opacity: 1;
+}
+
+.card__side--front {
+  display: none;
+}
+
+.card__side--back {
+  transform: rotateY(0deg);
+}
+
+.skillset__from,
+.skillset__description,
+.skillset__divider {
+  transform: translateX(0);
+  opacity: 1;
 }

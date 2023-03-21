@@ -1,5 +1,6 @@
 const intersectionWindow = document.querySelector('.skills');
 const skills = document.querySelectorAll('.skillset__item');
+const cta = document.querySelector('.skills__cta');
 
 const options = {
   root: intersectionWindow,
@@ -10,19 +11,23 @@ const options = {
 const observerCallback = (entries) => {
   console.log('here');
   entries.forEach((entry) => {
-    Array.from(entry.target.children).forEach((child) => {
+    const { target, isIntersecting } = entry;
+    if (target.classList.contains('skills__cta')) {
+      target.style.opacity = isIntersecting ? '1' : '0';
+    }
+    Array.from(target.children).forEach((child) => {
       if (child.classList.contains('skillset__from')) {
-        child.style.transform = entry.isIntersecting
+        child.style.transform = isIntersecting
           ? 'translateX(0)'
           : 'translateX(-100%)';
-        child.style.opacity = entry.isIntersecting ? '1' : '0';
+        child.style.opacity = isIntersecting ? '1' : '0';
       }
 
       if (child.classList.contains('skillset__description')) {
-        child.style.transform = entry.isIntersecting
+        child.style.transform = isIntersecting
           ? 'translateX(0)'
           : 'translateX(100%)';
-        child.style.opacity = entry.isIntersecting ? '1' : '0';
+        child.style.opacity = isIntersecting ? '1' : '0';
       }
 
       if (child.classList.contains('skillset__divider')) {
@@ -33,15 +38,16 @@ const observerCallback = (entries) => {
 };
 
 const observer = new IntersectionObserver(observerCallback, options);
-observer.root.style.border = 'solid 1px red';
 
 export const observeSkills = () => {
+  observer.observe(cta);
   Array.from(skills).forEach((skill) => {
     observer.observe(skill);
   });
 };
 
 export const unobserveSkills = () => {
+  observer.unobserve(cta);
   Array.from(skills).forEach((skill) => {
     observer.unobserve(skill);
   });

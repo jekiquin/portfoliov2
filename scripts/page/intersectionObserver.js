@@ -9,7 +9,6 @@ const options = {
 };
 
 const observerCallback = (entries) => {
-  console.log('here');
   entries.forEach((entry) => {
     const { target, isIntersecting } = entry;
     if (target.classList.contains('skills__cta')) {

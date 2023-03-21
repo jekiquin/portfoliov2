@@ -27,3 +27,32 @@
     transform: translateY(0);
   }
 }
+
+@keyframes spin {
+  0% {
+    transform: rotateY(-180deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes brightness {
+  0%,
+  50%,
+  100% {
+    filter: blur(0px) brightness(120%)
+      drop-shadow(0 0 2.5px rgba(255, 255, 255, 0.1))
+      drop-shadow(0 0 5px rgba(255, 255, 255, 0.075))
+      drop-shadow(0 0 7.5px rgba(255, 255, 255, 0.045))
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.025));
+  }
+  25%,
+  75% {
+    filter: blur(1px) brightness(50%)
+      drop-shadow(0 0 2.5px rgba(255, 255, 255, 0.1))
+      drop-shadow(0 0 5px rgba(255, 255, 255, 0.075))
+      drop-shadow(0 0 7.5px rgba(255, 255, 255, 0.045))
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.025));
+  }
+}

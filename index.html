@@ -4,8 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- todo: need to install phaser -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+      integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- phaser -->
     <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+
+    <!-- three js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"
+      integrity="sha512-n8IpKWzDnBOcBhRlHirMZOUvEq2bLRMuJGjuVqbzUJwtTsgwOgK5aS0c1JA647XWYfqvXve8k3PtZdzpipFjgg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
 
     <!-- page piling -->
     <link
@@ -126,36 +151,38 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </svg>
         </a>
 
-        <nav class="menu">
-          <input class="menu__toggler" type="checkbox" id="menu-toggle" />
-          <label class="menu__button" for="menu-toggle" tabindex="0">
-            <div class="menu__button-line menu__button-line--top"></div>
-            <div class="menu__button-line menu__button-line--middle"></div>
-            <div class="menu__button-line menu__button-line--bottom"></div>
-          </label>
+        <noscript>
+          <nav class="menu">
+            <input class="menu__toggler" type="checkbox" id="menu-toggle" />
+            <label class="menu__button" for="menu-toggle" tabindex="0">
+              <div class="menu__button-line menu__button-line--top"></div>
+              <div class="menu__button-line menu__button-line--middle"></div>
+              <div class="menu__button-line menu__button-line--bottom"></div>
+            </label>
 
-          <div class="menu__container">
-            <ul class="menu__list" id="menu">
-              <li data-menuanchor="about" class="menu__item">
-                <a class="menu__link" href="#about">about</a>
-              </li>
-              <li data-menuanchor="skills" class="menu__item">
-                <a class="menu__link" href="#skills">skills</a>
-              </li>
-              <li data-menuanchor="projects" class="menu__item">
-                <a class="menu__link" href="#projects">projects</a>
-              </li>
-              <li class="menu__item">
-                <a
-                  class="menu__link"
-                  href="https://resume.io/r/6VH4eSpE3"
-                  target="_blank"
-                  >resume</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
+            <div class="menu__container">
+              <ul class="menu__list" id="menu">
+                <li data-menuanchor="about" class="menu__item">
+                  <a class="menu__link" href="#about">about</a>
+                </li>
+                <li data-menuanchor="skills" class="menu__item">
+                  <a class="menu__link" href="#skills">skills</a>
+                </li>
+                <li data-menuanchor="projects" class="menu__item">
+                  <a class="menu__link" href="#projects">projects</a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    class="menu__link"
+                    href="https://resume.io/r/6VH4eSpE3"
+                    target="_blank"
+                    >resume</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </noscript>
       </div>
     </header>
 
@@ -228,7 +255,130 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
         </section>
 
         <section class="section pp-scrollable" id="about">
-          <div class="page">about</div>
+          <div class="page about">
+            <article class="about__image-container card">
+              <div class="about__three card__side card__side--front"></div>
+              <div class="about__dog card__side card__side--front">
+                <img
+                  class="about__dog-img"
+                  src="/images/Moose.webp"
+                  alt="My dog Moose!"
+                />
+              </div>
+              <div class="card__side card__side--back">
+                <div class="about__avatar">
+                  <img
+                    class="about__avatar-image"
+                    src="/images/jek.png"
+                    alt="This is me!"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="about__description">
+              <h1>About Me</h1>
+
+              <article class="about__context">
+                <p>Welcome to my page!</p>
+                <p>
+                  I know, it's yet another portfolio! But I'm hoping you would
+                  find this one interesting. Who knows, there might be an easter
+                  egg or two here somewhere that you might enjoy.
+                </p>
+                <p>
+                  By the way, my name is <span class="bold info">Jerick</span>,
+                  but my friends call me <span class="bold info">Jek</span>.
+                </p>
+                <p>
+                  I'm a Full Stack Developer, focusing on Front End Development.
+                  I pretty much enjoy building different stuff (even though it's
+                  a nightmare working on styling, can I get an AMEN!?!).
+                </p>
+                <p>
+                  Outside of coding, I enjoy spending time with my family. Oh,
+                  and did ever mention that I have a dog? You might see him
+                  around here somewhere (only if you have JavaScript, tho).
+                </p>
+                <p>
+                  I also love playing basketball and hiking just to get my blood
+                  pumping sometime. If I'm feeling lazy, I might just go for a
+                  game of chess (Remember Queen's Gambit???).
+                </p>
+                <p>
+                  I also enjoy watching anime. I don't think anyone is too old
+                  to watch it. Are you a One Piece fan? If so,
+                  <span class="bold warning">NO SPOILERS</span>
+                </p>
+                <p>
+                  Are you hiring? Check out my
+                  <a
+                    class="about__resume"
+                    href="https://resume.io/r/6VH4eSpE3"
+                    target="_blank"
+                    >resume</a
+                  >.
+                </p>
+                <p>Check out my socials below! Let's connect!</p>
+              </article>
+
+              <div class="social">
+                <ul class="social__list">
+                  <li class="social__item social__item--linkedin">
+                    <a
+                      class="social__link"
+                      href="https://www.linkedin.com/in/jerick-iquin"
+                      target="_blank"
+                    >
+                      <i
+                        class="social__icon fa-brands fa-linkedin-in"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--github personal">
+                    <a
+                      class="social__link"
+                      href="https://github.com/jekiquin"
+                      target="_blank"
+                    >
+                      <i
+                        class="social__icon fa-brands fa-github-alt"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--github work">
+                    <a
+                      class="social__link"
+                      href="https://github.com/jekiquin-bb"
+                      target="_blank"
+                    >
+                      <i
+                        class="social__icon fa-brands fa-github-alt"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                  <li class="social__item social__item--google">
+                    <a
+                      class="social__link"
+                      href="mailto:jci.dev.work@gmail.com?subject=RE: Portfolio"
+                    >
+                      <i
+                        class="social__icon fa-brands fa-google"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <button class="about__show-dog" title="Show my Dog">
+                <i class="fa-solid fa-paw"></i>
+              </button>
+            </article>
+          </div>
         </section>
 
         <section class="section pp-scrollable" id="skills">

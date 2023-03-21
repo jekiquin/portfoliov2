@@ -12,5 +12,13 @@ body,
   padding-top: 4rem;
 }
 .page {
-  margin-top: 0;
+  padding-top: 1rem;
+}
+
+.about__context p {
+  transform: translateX(0);
+}
+
+.about__show-dog {
+  display: none;
 }

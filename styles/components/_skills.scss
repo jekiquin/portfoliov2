@@ -9,17 +9,17 @@
     background-color: transparent;
     position: relative;
     padding: 35vh 0 65vh;
-
-    border: solid 1px white;
+    margin-top: 20vh;
   }
 
-  &__intersection {
-    border: solid 1px red;
-    position: sticky;
-    width: 200vw;
-    height: 35vh;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
+  &__cta {
+    @extend %justify-align-center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__scroll {
+    font-size: 2rem;
+    animation: scroll-cta 0.5s ease-in-out infinite;
   }
 }

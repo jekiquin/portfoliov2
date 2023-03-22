@@ -22,7 +22,7 @@ const observerCallback = (entries) => {
         child.style.opacity = isIntersecting ? '1' : '0';
       }
 
-      if (child.classList.contains('skillset__description')) {
+      if (child.classList.contains('skillset__name')) {
         child.style.transform = isIntersecting
           ? 'translateX(0)'
           : 'translateX(100%)';

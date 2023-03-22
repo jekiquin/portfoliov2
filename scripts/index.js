@@ -8,6 +8,7 @@ import {
   showAvatarAnimation,
   addDescriptionsAnimation,
   removeDescriptionsAnimation,
+  initSkillsIndicator,
 } from './page/animations';
 import { initShowDog } from './page/dog';
 import { observeSkills, unobserveSkills } from './page/intersectionObserver';
@@ -47,7 +48,6 @@ $(document).ready(function () {
     //events
     onLeave: function (index, nextIndex, direction) {
       $(`.section#${PAGES[index - 1]}`).scrollTop(0);
-      console.log(`.section#${PAGES[index - 1]}`);
       switch (PAGES[index - 1]) {
         case 'about':
           removeAvatarAnimation();
@@ -90,6 +90,7 @@ $(document).ready(function () {
 document.addEventListener('DOMContentLoaded', () => {
   initShowDog();
   initToken();
+  initSkillsIndicator();
   initGame();
   initThreeScene();
 });

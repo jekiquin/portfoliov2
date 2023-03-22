@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.skills {
+  background: url('/images/skillsbg.webp');
+  background-attachment: fixed;
+  background-size: auto 100vh;
+  background-position: center;
+
+  &__page {
+    background-color: transparent;
+    position: relative;
+    padding: 35vh 0 35vh;
+    margin-top: 15vh;
+  }
+
+  &__cta {
+    @extend %justify-align-center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+  }
+
+  &__scroll {
+    font-size: 2rem;
+    animation: scroll-cta 0.5s ease-in-out infinite;
+  }
+}

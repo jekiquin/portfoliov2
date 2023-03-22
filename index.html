@@ -152,38 +152,28 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </svg>
         </a>
 
-        <noscript>
-          <nav class="menu">
-            <input class="menu__toggler" type="checkbox" id="menu-toggle" />
-            <label class="menu__button" for="menu-toggle" tabindex="0">
-              <div class="menu__button-line menu__button-line--top"></div>
-              <div class="menu__button-line menu__button-line--middle"></div>
-              <div class="menu__button-line menu__button-line--bottom"></div>
-            </label>
+        <nav class="menu">
+          <input class="menu__toggler" type="checkbox" id="menu-toggle" />
+          <label class="menu__button" for="menu-toggle" tabindex="0">
+            <div class="menu__button-line menu__button-line--top"></div>
+            <div class="menu__button-line menu__button-line--middle"></div>
+            <div class="menu__button-line menu__button-line--bottom"></div>
+          </label>
 
-            <div class="menu__container">
-              <ul class="menu__list" id="menu">
-                <li data-menuanchor="about" class="menu__item">
-                  <a class="menu__link" href="#about">about</a>
-                </li>
-                <li data-menuanchor="skills" class="menu__item">
-                  <a class="menu__link" href="#skills">skills</a>
-                </li>
-                <li data-menuanchor="projects" class="menu__item">
-                  <a class="menu__link" href="#projects">projects</a>
-                </li>
-                <li class="menu__item">
-                  <a
-                    class="menu__link"
-                    href="https://resume.io/r/6VH4eSpE3"
-                    target="_blank"
-                    >resume</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </noscript>
+          <div class="menu__container">
+            <ul class="menu__list" id="menu">
+              <li data-menuanchor="about" class="menu__item">
+                <a class="menu__link" href="#about">about</a>
+              </li>
+              <li data-menuanchor="skills" class="menu__item">
+                <a class="menu__link" href="#skills">skills</a>
+              </li>
+              <li data-menuanchor="projects" class="menu__item">
+                <a class="menu__link" href="#projects">projects</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
 
@@ -229,7 +219,11 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
             <a class="intro__anchor" href="#about">
               <h2 class="intro__title">About me</h2>
               <div class="intro__image-container">
-                <img class="intro__image" src="images/me.webp" alt="skills" />
+                <img
+                  class="intro__image"
+                  src="images/me.webp"
+                  alt="Go to about me"
+                />
               </div>
             </a>
             <a class="intro__anchor" href="#skills">
@@ -238,7 +232,7 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
                 <img
                   class="intro__image"
                   src="images/skills.webp"
-                  alt="skills"
+                  alt="This are my skills"
                 />
               </div>
             </a>
@@ -248,7 +242,7 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
                 <img
                   class="intro__image"
                   src="images/projects.webp"
-                  alt="skills"
+                  alt="These are my projects"
                 />
               </div>
             </a>
@@ -278,7 +272,13 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
             </article>
 
             <article class="about__description">
-              <h1>About Me</h1>
+              <div class="about__header">
+                <h1>About Me</h1>
+                <div class="hint">
+                  <i class="fa-regular fa-lightbulb hint__icon"></i>
+                  <p class="hint__description">Find Space Invaders</p>
+                </div>
+              </div>
 
               <article class="about__context">
                 <p>Welcome to my page!</p>
@@ -382,8 +382,280 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </div>
         </section>
 
-        <section class="section pp-scrollable" id="skills">
-          <div class="page">skills</div>
+        <section class="section pp-scrollable skills" id="skills">
+          <div class="page skills__page">
+            <div class="skills__cta">
+              <div class="token" title="Free Token">
+                <div class="token__container">
+                  <div></div>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <div></div>
+                </div>
+              </div>
+              <h2>Scroll to see my skills</h2>
+              <i class="fa-regular fa-hand-point-down skills__scroll"></i>
+            </div>
+            <article class="skillset">
+              <!----------------------- CODECADEMY ----------------------->
+              <div class="skillset__item">
+                <p class="skillset__from">Codecademy</p>
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/html.png"
+                    alt="html"
+                  />
+                </div>
+
+                <p class="skillset__name">HTML</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/css.png"
+                    alt="css"
+                  />
+                </div>
+                <p class="skillset__name">CSS</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/javascript.png"
+                    alt="javascript"
+                  />
+                </div>
+                <p class="skillset__name">JavaScript</p>
+              </div>
+
+              <!----------------------- BRAINSTATION ----------------------->
+              <div class="skillset__item">
+                <p class="skillset__from">BrainStation</p>
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/git.png"
+                    alt="git"
+                  />
+                </div>
+                <p class="skillset__name">Git</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/react.png"
+                    alt="react"
+                  />
+                </div>
+                <p class="skillset__name">React</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/nodejs.png"
+                    alt="nodejs"
+                  />
+                </div>
+                <p class="skillset__name">NodeJS</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/express.png"
+                    alt="express"
+                  />
+                </div>
+                <p class="skillset__name">Express</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/knex.png"
+                    alt="knex"
+                  />
+                </div>
+                <p class="skillset__name">Knex</p>
+              </div>
+
+              <!----------------------- BALLOONBOX ----------------------->
+              <div class="skillset__item">
+                <p class="skillset__from">BalloonBox</p>
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/typescript.png"
+                    alt="typescript"
+                  />
+                </div>
+                <p class="skillset__name">TypeScript</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/reactnative.png"
+                    alt="reactnative"
+                  />
+                </div>
+                <p class="skillset__name">React Native</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/nextjs.png"
+                    alt="nextjs"
+                  />
+                </div>
+                <p class="skillset__name">NextJS</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/vue.png"
+                    alt="vue"
+                  />
+                </div>
+                <p class="skillset__name">VueJS</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/redux.png"
+                    alt="redux"
+                  />
+                </div>
+                <p class="skillset__name">Redux</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/tailwind.png"
+                    alt="tailwind"
+                  />
+                </div>
+                <p class="skillset__name">TailwindCSS</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/web3.png"
+                    alt="web3"
+                  />
+                </div>
+                <p class="skillset__name">Web3</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/mapbox.png"
+                    alt="mapbox"
+                  />
+                </div>
+                <p class="skillset__name">Mapbox</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/prisma.png"
+                    alt="prisma"
+                  />
+                </div>
+                <p class="skillset__name">Prisma ORM</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/postgres.png"
+                    alt="postgres"
+                  />
+                </div>
+                <p class="skillset__name">Postgres</p>
+              </div>
+
+              <!----------------------- CONTINUOUS LEARNING ----------------------->
+              <div class="skillset__item">
+                <p class="skillset__from">Continuous Learning</p>
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/jest.png"
+                    alt="jest"
+                  />
+                </div>
+                <p class="skillset__name">Jest</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/reacttestinglibrary.png"
+                    alt="reacttestinglibrary"
+                  />
+                </div>
+                <p class="skillset__name">React Testing Library</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/graphql.png"
+                    alt="graphql"
+                  />
+                </div>
+                <p class="skillset__name">GraphQL</p>
+              </div>
+              <div class="skillset__item">
+                <div class="skillset__divider">
+                  <img
+                    class="skillset__icon"
+                    src="/images/logo/docker.png"
+                    alt="docker"
+                  />
+                </div>
+                <p class="skillset__name">Docker</p>
+              </div>
+            </article>
+          </div>
+          <div class="attribution">
+            <a
+              class="attribution__link"
+              href="https://www.flaticon.com/free-icons/html"
+              target="_blank"
+              title="html icons"
+              >Icons by Freepik - Flaticon</a
+            >
+            <a
+              class="attribution__link"
+              target="_blank"
+              href="https://icons8.com"
+              title="html icons"
+              >Icons by Icons8</a
+            >
+          </div>
         </section>
 
         <section class="section pp-scrollable" id="projects">

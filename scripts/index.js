@@ -10,6 +10,8 @@ import {
   removeDescriptionsAnimation,
 } from './page/animations';
 import { initShowDog } from './page/dog';
+import { observeSkills, unobserveSkills } from './page/intersectionObserver';
+import { initToken } from './page/token';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -44,17 +46,39 @@ $(document).ready(function () {
 
     //events
     onLeave: function (index, nextIndex, direction) {
-      if (PAGES[index - 1] === 'about') {
-        removeAvatarAnimation();
-        removeDescriptionsAnimation();
+      switch (PAGES[index - 1]) {
+        case 'about':
+          removeAvatarAnimation();
+          removeDescriptionsAnimation();
+          break;
+        case 'skills':
+          unobserveSkills();
+          break;
+        case 'projects':
+          break;
+        case 'intro':
+          break;
+        default:
+          console.error(`${PAGES[index - 1]} not found`);
       }
     },
     afterLoad: function (anchorLink) {
       $(`.section#${anchorLink}`).scrollTop(0);
 
-      if (anchorLink === 'about') {
-        showAvatarAnimation();
-        addDescriptionsAnimation();
+      switch (anchorLink) {
+        case 'about':
+          showAvatarAnimation();
+          addDescriptionsAnimation();
+          break;
+        case 'skills':
+          observeSkills();
+          break;
+        case 'projects':
+          break;
+        case 'intro':
+          break;
+        default:
+          console.error(`${anchorLink} not found`);
       }
     },
     // afterRender: function () {},
@@ -63,6 +87,7 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', () => {
   initShowDog();
+  initToken();
   initGame();
   initThreeScene();
 });

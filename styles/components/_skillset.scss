@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.skillset {
+  &__item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 4rem 1fr;
+    grid-template-areas: 'from divider description';
+    margin-bottom: 1rem;
+    font-family: 'Economica', 'san-serif';
+    font-size: 1.5rem;
+  }
+
+  &__from {
+    grid-area: from;
+    justify-self: flex-end;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    font-family: 'Marvin Visions Variable', 'san-serif';
+    text-align: right;
+  }
+  &__divider {
+    grid-area: divider;
+    height: 2rem;
+    width: 2rem;
+    // background: url('/images/token.png');
+    // background-size: cover;
+    justify-self: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  &__name {
+    @extend %align-center;
+    grid-area: description;
+    justify-self: flex-start;
+    gap: 1rem;
+    transform: translate(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  &__icon {
+    @extend %img;
+    width: auto;
+  }
+}

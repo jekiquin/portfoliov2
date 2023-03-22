@@ -4,6 +4,10 @@
 .menu {
   $parent: &;
 
+  @include media(map-get($screen, 'desktop')) {
+    display: none;
+  }
+
   &__container {
     background-color: $black1;
     border-radius: 16px 16px 0 0;

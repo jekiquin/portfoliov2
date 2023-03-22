@@ -2,7 +2,8 @@
 
 .skills {
   background: url('/images/skillsbg.webp');
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: auto 100vh;
   background-position: center;
 
   &__page {

@@ -39,8 +39,12 @@ body,
 }
 
 .skillset__from,
-.skillset__description,
+.skillset__name,
 .skillset__divider {
   transform: translateX(0);
   opacity: 1;
+}
+
+.menu {
+  display: block;
 }

@@ -45,6 +45,11 @@ body,
   opacity: 1;
 }
 
+.skills {
+  background-attachment: fixed;
+  background-size: auto 100vh;
+}
+
 .menu {
   display: block;
 }

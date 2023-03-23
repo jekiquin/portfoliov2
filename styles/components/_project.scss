@@ -4,6 +4,13 @@
   background-size: auto 100vh;
   position: relative;
 
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba($black1, 0.5);
+  }
+
   &__foreground {
     position: absolute;
     height: 100vh;
@@ -11,6 +18,7 @@
     bottom: -1px;
     left: 50%;
     transform: translateX(-50%) translateZ(1rem);
+    z-index: 2;
   }
 
   &__page {

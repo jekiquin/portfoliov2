@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 .projects {
   @include background('/images/projectsbg2.png');
-  background-size: auto 100vh;
+  background-position: bottom;
   position: relative;
 
   &::after {
@@ -12,18 +12,20 @@
   }
 
   &__foreground {
+    @include background('/images/projectsbg1.png');
+    background-position: bottom;
     position: absolute;
-    height: 100vh;
-    width: auto;
-    bottom: -1px;
-    left: 50%;
-    transform: translateX(-50%) translateZ(1rem);
+    height: 100%;
+    width: 100%;
     z-index: 2;
+    transform: translateZ(1rem);
   }
 
   &__page {
     background-color: transparent;
     position: relative;
     height: 100vh;
+    width: 100vw;
+    z-index: 3;
   }
 }

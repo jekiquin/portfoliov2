@@ -61,6 +61,8 @@ $(document).ready(function () {
           break;
         case 'intro':
           break;
+        case 'contact':
+          break;
         default:
           console.error(`${PAGES[index - 1]} not found`);
       }
@@ -79,6 +81,8 @@ $(document).ready(function () {
         case 'projects':
           break;
         case 'intro':
+          break;
+        case 'contact':
           break;
         default:
           console.error(`${anchorLink} not found`);

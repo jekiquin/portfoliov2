@@ -10,8 +10,6 @@ export const initProjectParallax = () => {
     const factorX = (x - midX) / 3000;
     const factorY = (y - midY) / 3000;
 
-    foreground.style.transform = `translateX(${
-      -50 - factorX
-    }%)  translateY(${-factorY}%) translateZ(1rem)`;
+    foreground.style.transform = `translateX(${-factorX}%)  translateY(${-factorY}%) translateZ(1rem)`;
   });
 };

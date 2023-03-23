@@ -1,22 +1,22 @@
 @use '../abstracts' as *;
 .projects {
-  @include background('/images/projectsbg2.png');
-  background-position: bottom;
   position: relative;
 
-  &::after {
-    content: '';
+  &__background {
+    @include background('/images/projectsbg2.png');
+    background-position: bottom;
+    opacity: 0.5;
     position: absolute;
-    inset: 0;
-    background-color: rgba($black1, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
   }
 
   &__foreground {
     @include background('/images/projectsbg1.png');
-    background-position: bottom;
     position: absolute;
-    height: 100%;
-    width: 100%;
+    inset: 0;
+    background-position: bottom;
     z-index: 2;
     transform: translateZ(1rem);
   }

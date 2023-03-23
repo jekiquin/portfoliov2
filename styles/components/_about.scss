@@ -123,11 +123,8 @@ $gradient: linear-gradient(
 
   &__side {
     @extend %justify-align-center;
-    height: 100%;
-    width: 100%;
+    @extend %full-absolute;
     transition: all 0.8s ease;
-    position: absolute;
-    inset: 0;
     backface-visibility: hidden;
     overflow: hidden;
 

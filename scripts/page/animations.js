@@ -30,3 +30,41 @@ export const removeDescriptionsAnimation = () => {
     context.style.animation = '';
   });
 };
+
+// -------------------------- skills indicator ------------------------------------
+const skillsIndicator = document.querySelector('.skills__indicator');
+const skillsPage = document.querySelector('.skills');
+const skillsContainer = document.querySelector('.skills__page');
+
+export const initSkillsIndicator = () => {
+  skillsPage.addEventListener('scroll', () => {
+    let { height: skillsContainerHeight } =
+      skillsContainer.getBoundingClientRect();
+    const styles = getComputedStyle(skillsContainer);
+
+    const factor =
+      skillsPage.scrollTop /
+      (skillsContainerHeight - totalHorizontalSpacing(styles));
+    skillsIndicator.style.transform = `scaleX(${factor})`;
+  });
+};
+
+const totalHorizontalSpacing = (styles) => {
+  const {
+    paddingBottom,
+    paddingTop,
+    marginTop,
+    marginBottom,
+    borderTopWidth,
+    borderBottomWidth,
+  } = styles;
+
+  return [
+    paddingBottom,
+    paddingTop,
+    marginTop,
+    marginBottom,
+    borderTopWidth,
+    borderBottomWidth,
+  ].reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
+};

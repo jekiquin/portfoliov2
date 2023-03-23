@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+.projects {
+  @include background('/images/projectsbg2.png');
+  background-size: auto 100vh;
+  position: relative;
+
+  &__foreground {
+    position: absolute;
+    height: 100vh;
+    width: auto;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(1rem);
+    border: solid 1px white;
+  }
+
+  &__page {
+    background-color: transparent;
+    position: relative;
+    height: 100vh;
+  }
+}

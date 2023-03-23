@@ -13,6 +13,7 @@ import {
 import { initShowDog } from './page/dog';
 import { observeSkills, unobserveSkills } from './page/intersectionObserver';
 import { initToken } from './page/token';
+import { initProjectParallax } from './page/parallax';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowDog();
   initToken();
   initSkillsIndicator();
+  initProjectParallax();
   initGame();
   initThreeScene();
 });

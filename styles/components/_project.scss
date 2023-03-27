@@ -126,7 +126,7 @@
   }
 
   &__context {
-    @include padding(1, 1);
+    @include padding(1, 1, 2);
     @extend %flex;
     @extend %full-absolute;
     box-sizing: border-box;
@@ -147,11 +147,43 @@
     transition: all 0.5s ease 0.5s;
 
     @include media(map-get($screen, 'tablet')) {
-      @include padding(1, 2);
+      @include padding(1, 2, 2);
     }
   }
 
   &__title {
     letter-spacing: 2px;
+  }
+
+  &__role {
+    font-family: 'Marvin Visions Variable', 'Playfair Display SC', 'sans-serif';
+
+    &::before {
+      content: 'Role: ';
+      font-family: 'Alef', 'sans-serif';
+    }
+  }
+
+  &__links {
+    @extend %align-center;
+    gap: 1rem;
+  }
+
+  &__link {
+    @extend %justify-align-center;
+    @include padding(0.5, 1);
+    $parent: &;
+    border-radius: 16px;
+    gap: 0.5rem;
+    width: 5rem;
+    color: $white1;
+    text-decoration: none;
+    border: 1px solid $white1;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background-color: $white1;
+      color: $black1;
+    }
   }
 }

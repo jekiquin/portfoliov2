@@ -11,3 +11,12 @@
 .info {
   color: $info;
 }
+
+.promotion-link {
+  text-decoration: none;
+  color: $success;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

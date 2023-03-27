@@ -2,25 +2,10 @@
 
 .projects {
   position: relative;
-
-  &__background {
-    @extend %full-absolute;
-    @include background('/images/projectsbg2.png');
-    background-position: bottom;
-    opacity: 0.7;
-
-    transform: scaleX(1.01) translateZ(-1rem);
-    z-index: 1;
-  }
-
-  &__foreground {
-    @extend %full-absolute;
-    @include background('/images/projectsbg1.png');
-
-    background-position: bottom;
-    z-index: 2;
-    transform: translateZ(1rem) scaleX(1.01);
-  }
+  @extend %full-absolute;
+  @include background('/images/projectsbg.webp');
+  background-position: bottom;
+  opacity: 0.7;
 
   &__page {
     @extend %justify-align-center;

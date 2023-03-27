@@ -41,7 +41,6 @@
     @include padding(2, 1);
     background-color: $primary;
     border-radius: 16px;
-    // border: 0.15rem solid $accent;
     box-shadow: inset 0px 0px 0.5rem 0px $primary, 0px 0px 0.5rem 0px $primary;
     position: absolute;
     height: 25rem;
@@ -51,6 +50,7 @@
     margin: auto;
     transform: translateY(-50%);
     transition: all 0.4s ease;
+    user-select: none;
     &::after {
       content: '';
       position: absolute;

@@ -30,6 +30,12 @@
   }
 }
 
+@mixin token-background {
+  background-image: url('/images/token.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 @mixin project-card-opacity {
   & .projects__card {
     opacity: 0;

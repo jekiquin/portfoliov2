@@ -1,3 +1,5 @@
+@use '../abstracts/mixins' as *;
+
 .token {
   text-align: left;
   transition: all 0.4s ease-out;
@@ -30,10 +32,8 @@
       background-size: cover;
     }
     > div:first-child {
+      @include token-background();
       transform: translateZ(-6px);
-      background-image: url('/images/token.png');
-      background-size: contain;
-      background-repeat: no-repeat;
     }
     > div:last-child {
       transform: translateZ(6px);
@@ -41,9 +41,7 @@
     > div:last-child,
     &::after,
     i {
-      background-image: url('/images/token.png');
-      background-size: contain;
-      background-repeat: no-repeat;
+      @include token-background();
     }
     i {
       filter: blur(0.5px);

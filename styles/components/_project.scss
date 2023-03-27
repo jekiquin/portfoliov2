@@ -39,9 +39,9 @@
 
   &__card {
     @include padding(2, 1);
-    background-color: $primary;
+    background-color: $black2;
     border-radius: 16px;
-    box-shadow: inset 0px 0px 0.5rem 0px $primary, 0px 0px 0.5rem 0px $primary;
+    box-shadow: inset 0px 0px 0.5rem 0px $accent, 0px 0px 0.5rem 0px $accent;
     position: absolute;
     height: 25rem;
     left: 0;
@@ -51,6 +51,7 @@
     transform: translateY(-50%);
     transition: all 0.4s ease;
     user-select: none;
+
     &::after {
       content: '';
       position: absolute;
@@ -60,8 +61,8 @@
       bottom: 0;
       opacity: 0;
       z-index: -1;
-      background-color: $primary;
-      box-shadow: 0 0 2rem 0.2rem $primary;
+      background-color: $black2;
+      box-shadow: 0 0 2rem 0.2rem $black2;
       filter: blur(1.5em);
       transition: opacity 0.5s linear;
     }
@@ -70,5 +71,87 @@
       height: min(30rem, 100%);
       width: 60%;
     }
+  }
+
+  &__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+
+    @include media(map-get($screen, 'desktop')) {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    &--construction {
+      &::after {
+        @extend %full-absolute;
+        content: '';
+        z-index: 2;
+        background: url('/images/under-construction.webp');
+        background-size: 30%;
+        background-repeat: no-repeat;
+        background-position: top right;
+      }
+    }
+
+    &--confidential {
+      &::after {
+        @extend %full-absolute;
+        content: '';
+        z-index: 2;
+        background: url('/images/confidential.webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      & * {
+        filter: blur(4rem);
+      }
+    }
+  }
+
+  &__image {
+    @extend %img;
+    object-fit: fill;
+  }
+
+  &__context {
+    @include padding(1, 1);
+    @extend %flex;
+    @extend %full-absolute;
+    box-sizing: border-box;
+    border-radius: 16px;
+    overflow: none;
+    background: $black1;
+    background: linear-gradient(
+      180deg,
+      rgba($black1, 0) 0%,
+      rgba($black1, 1) 50%
+    );
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    transform: translate(0);
+    opacity: 0;
+    transition: all 0.5s ease 0.5s;
+
+    @include media(map-get($screen, 'tablet')) {
+      @include padding(1, 2);
+    }
+  }
+
+  &__title {
+    letter-spacing: 2px;
   }
 }

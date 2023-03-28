@@ -32,6 +32,7 @@
   }
 
   &__button {
+    @include padding(2);
     position: relative;
     background-color: transparent;
     border: none;
@@ -49,15 +50,16 @@
 
     &-line {
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 1rem;
+
+      width: 1.2rem;
       height: 0.2rem;
       background-color: $accent;
       transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out,
         opacity 0.2s ease-in-out 0.25s;
 
       &--top {
-        top: 0;
+        top: 1rem;
       }
       &--middle {
         top: 50%;
@@ -65,7 +67,7 @@
         opacity: 1;
       }
       &--bottom {
-        bottom: 0;
+        bottom: 1rem;
       }
     }
 

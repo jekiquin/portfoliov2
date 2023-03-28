@@ -11,7 +11,7 @@
     @extend %justify-align-center;
     background-color: transparent;
     position: relative;
-    height: 100vh;
+    height: var(--doc-height);
     width: 100vw;
     z-index: 3;
     padding-bottom: 5rem;

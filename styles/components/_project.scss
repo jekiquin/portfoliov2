@@ -118,7 +118,11 @@
     object-fit: cover;
 
     &--full-width {
-      object-fit: fill;
+      width: 100%;
+      height: auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 

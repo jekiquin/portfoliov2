@@ -6,6 +6,7 @@
   color: $black1;
   text-transform: capitalize;
   background-color: $accent;
+  font-size: 0.8rem;
 }
 
 #pp-nav {
@@ -28,6 +29,11 @@
   & li {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  & span {
+    width: 0.5rem;
+    height: 0.5rem;
   }
 }
 

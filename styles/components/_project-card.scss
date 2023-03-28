@@ -51,6 +51,11 @@
     & .projects__context {
       transition: all 0.5s ease 0.5s;
       opacity: 1;
+      z-index: 1;
     }
+  }
+
+  #item-#{$i}:checked ~ .projects__buttons #button-#{$i} {
+    background-color: $primary;
   }
 }

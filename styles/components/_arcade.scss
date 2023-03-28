@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.arcade {
+  @extend %align-center;
+  gap: 0.5rem;
+
+  &__image {
+    height: 2rem;
+    width: auto;
+  }
+}

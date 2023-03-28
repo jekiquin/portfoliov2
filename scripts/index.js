@@ -13,7 +13,6 @@ import {
 import { initShowDog } from './page/dog';
 import { observeSkills, unobserveSkills } from './page/intersectionObserver';
 import { initToken } from './page/token';
-import { pagePilingInit } from './page/pagePilingOverride';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -100,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initThreeScene();
 });
 
-addEventListener('resize', ({ target }) => {
+addEventListener('resize', () => {
   init();
-  pagePilingInit(target);
 });

@@ -1,11 +1,11 @@
 @use '../abstracts' as *;
 
 .projects {
-  position: relative;
   @extend %full-absolute;
   @include background('/images/projectsbg.webp');
   background-position: bottom;
   opacity: 0.7;
+  position: relative;
 
   &__page {
     @extend %justify-align-center;
@@ -67,7 +67,7 @@
       transition: opacity 0.5s linear;
     }
 
-    @include media(map-get($screen, 'tablet')) {
+    @include media(map-get($screen, 'desktop')) {
       height: min(30rem, 100%);
       width: 50rem;
     }

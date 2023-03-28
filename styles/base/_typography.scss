@@ -12,7 +12,11 @@
 
 html {
   font-family: 'Alef', 'sans-serif';
-  font-size: 0.875rem;
+  font-size: 0.625rem;
+
+  @include media(map-get($screen, 'mobile')) {
+    font-size: 0.875rem;
+  }
 
   @include media(map-get($screen, 'desktop')) {
     font-size: 1rem;

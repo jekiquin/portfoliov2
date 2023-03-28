@@ -18,7 +18,7 @@
       @include project-card-behind();
       transform: translateY(-50% - 30%) translateZ(-20rem);
 
-      @include media(map-get($screen, 'tablet')) {
+      @include media(map-get($screen, 'desktop')) {
         transform: translateY(-40%) translateX(-50%) translateZ(-50rem);
       }
     }
@@ -31,7 +31,7 @@
       @include project-card-behind();
       transform: translateY(-50% + 35%) translateZ(-30rem);
 
-      @include media(map-get($screen, 'tablet')) {
+      @include media(map-get($screen, 'desktop')) {
         transform: translateY(-40%) translateX(50%) translateZ(-50rem);
       }
     }

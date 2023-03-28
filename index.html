@@ -53,7 +53,7 @@
     />
     <script
       type="module"
-      src="/scripts/pagePiling/jquery.pagepiling.js"
+      src="/scripts/pagePiling/jquery.pagepiling.min.js"
     ></script>
 
     <!-- Actual index.js -->
@@ -264,7 +264,7 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </div>
         </section>
 
-        <section class="section pp-scrollable" id="about">
+        <section class="section pp-scrollable section--about" id="about">
           <div class="page about">
             <article class="about__image-container card">
               <div class="about__three card__side card__side--front"></div>
@@ -397,7 +397,7 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </div>
         </section>
 
-        <section class="section pp-scrollable section skills" id="skills">
+        <section class="section pp-scrollable skills" id="skills">
           <div class="skills__indicator"></div>
           <div class="page skills__page">
             <div class="skills__cta">
@@ -1032,10 +1032,96 @@ c-17 -48 -13 -68 14 -68 13 0 35 26 69 83 50 81 127 177 143 177 4 0 10 -18
           </div>
         </section>
 
-        <section class="section" id="contact">
-          <div class="page">contact</div>
+        <section class="section pp-scrollable section--contact contact" id="contact">
+          <div class="page contact__page">
+            <form class="contact__form" action="https://getform.io/f/296ac476-6c48-4469-8fbf-5d995195d35e" method="POST">
+              <h1 class="contact__heading">Let's Chat!</h1>
+              <div class="contact__input">
+                <label for="name" class="contact__label">Name</label>
+                <input
+                  class="contact__field"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter name here"
+                  required
+                />
+              </div>
+
+              <div class="contact__input">
+                <label for="message" class="contact__label">Message</label>
+                <textarea
+                  class="contact__field contact__field--message"
+                  id="message"
+                  name="message"
+                  placeholder="Please enter any feedback or comments, or if you just want to talk"
+                  rows="6"
+                  required
+                ></textarea>
+              </div>
+              <input
+                class="contact__field contact__field--button contact__field--submit"
+                type="submit"
+                value="Send Message"
+              />
+            </form>
+
+            <p class="contact__divider">or</p>
+            <ul class="contact__socials">
+              <li class="contact__socials-item" title="Linkedin">
+                <a
+                  class="contact__link"
+                  href="https://www.linkedin.com/in/jerick-iquin"
+                  target="_blank"
+                >
+                  <i
+                    class="social__icon fa-brands fa-linkedin-in"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+              <li class="contact__socials-item" title="Github Personal">
+                <a
+                  class="contact__link"
+                  href="https://github.com/jekiquin"
+                  target="_blank"
+                >
+                  <i
+                    class="social__icon fa-brands fa-github-alt"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+              <li class="contact__socials-item" title="Github Dev">
+                <a
+                  class="contact__link"
+                  href="https://github.com/jekiquin-bb"
+                  target="_blank"
+                >
+                  <i
+                    class="social__icon fa-brands fa-github-alt"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+              <li class="contact__socials-item" title="Email">
+                <a
+                  class="contact__link"
+                  href="mailto:jci.dev.work@gmail.com?subject=RE: Portfolio"
+                >
+                  <i
+                    class="social__icon fa-brands fa-google"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+            </ul>
+              
+            </ul>
+          </div>
         </section>
       </div>
     </main>
+
   </body>
 </html>

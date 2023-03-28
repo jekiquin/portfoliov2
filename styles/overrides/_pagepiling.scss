@@ -1,25 +1,39 @@
 @use '../abstracts' as *;
 
 .pp-tooltip {
-  color: $accent;
+  @include padding(0.5, 1);
+  border-radius: 0.5rem;
+  color: $black1;
   text-transform: capitalize;
+  background-color: $accent;
+  font-size: 0.8rem;
 }
 
 #pp-nav {
   &.left {
-    left: -100px;
+    left: 0;
 
     @include media(map-get($screen, 'desktop')) {
-      left: 17px;
+      left: 1rem;
     }
   }
 
   &.right {
-    right: -100px;
+    right: 0;
 
     @include media(map-get($screen, 'desktop')) {
-      right: 17px;
+      right: 1rem;
     }
+  }
+
+  & li {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  & span {
+    width: 0.5rem;
+    height: 0.5rem;
   }
 }
 
@@ -29,5 +43,11 @@
 }
 
 .section {
-  background-color: $black1;
+  &--about {
+    background-color: $black1;
+  }
+
+  &--contact {
+    background-color: $black3;
+  }
 }

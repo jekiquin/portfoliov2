@@ -1,0 +1,133 @@
+@use '../abstracts/' as *;
+
+.contact {
+  &__page {
+    @extend %justify-center;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 3rem;
+    width: min(25rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    color: $white3;
+    text-shadow: 1px 1px 1px $black1;
+    background-color: transparent;
+  }
+
+  &__form {
+    @extend %justify-center;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 1rem;
+  }
+
+  &__input {
+    @extend %justify-center;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  &__heading {
+    text-align: center;
+    letter-spacing: 4px;
+  }
+
+  &__submit {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  &__field {
+    color: $white1;
+    border: 0;
+    outline: 0;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: $black3;
+    text-shadow: 1px 1px 0 $black1;
+    box-shadow: inset 2px 2px 5px $black2, inset -2px -2px 5px $black1;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+
+    &:focus {
+      box-shadow: inset 1px 1px 2px $black2, inset -1px -1px 2px $black1;
+    }
+
+    &--message {
+      resize: none;
+    }
+
+    &--button {
+      box-shadow: -2px -2px 10px $black1, 2px 2px 10px $black2;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        box-shadow: -2px -2px 5px $black1, 2px 2px 5px $black2;
+      }
+
+      &:active {
+        box-shadow: inset 1px 1px 2px $black2, inset -1px -1px 2px $black1;
+      }
+    }
+
+    &--submit {
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40%;
+      height: 0;
+      border: 1px solid $white1;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &__socials {
+    @extend %align-center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
+    gap: 1rem;
+
+    &-item {
+      @extend .contact__field--button;
+      width: fit-content;
+      border-radius: 1rem;
+      padding: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -10,6 +10,7 @@ $gradient: linear-gradient(
   grid-template-rows: 50vh 1fr;
   grid-template-columns: 1fr;
   gap: 3rem;
+  min-height: 100vh;
   min-height: var(--doc-height);
 
   @include media(map-get($screen, 'tablet')) {

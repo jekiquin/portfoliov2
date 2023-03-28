@@ -49,12 +49,8 @@ body,
   opacity: 1;
 }
 
-.skills {
-  background-attachment: fixed;
-  background-size: auto 100vh;
-}
-
+.skills,
 .projects {
   background-attachment: fixed;
-  background-size: 100vw auto;
+  background-size: auto 100vh;
 }

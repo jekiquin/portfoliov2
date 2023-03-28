@@ -5,20 +5,40 @@
   text-transform: capitalize;
 }
 
-#pp-nav {
-  &.left {
-    left: -100px;
+// #pp-nav {
+//   &.left {
+//     left: -100px;
 
-    @include media(map-get($screen, 'desktop')) {
-      left: 17px;
-    }
+//     @include media(map-get($screen, 'desktop')) {
+//       left: 17px;
+//     }
+//   }
+
+//   &.right {
+//     right: -100px;
+
+//     @include media(map-get($screen, 'desktop')) {
+//       right: 17px;
+//     }
+//   }
+// }
+
+#pp-nav {
+  height: 100vh;
+  &.left {
+    left: 0;
   }
 
   &.right {
-    right: -100px;
+    right: 0;
+  }
 
-    @include media(map-get($screen, 'desktop')) {
-      right: 17px;
+  & ul {
+    height: 100%;
+    padding-top: $header-size;
+
+    & li {
+      margin: 0;
     }
   }
 }

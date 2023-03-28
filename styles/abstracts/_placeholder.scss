@@ -56,7 +56,9 @@
   /* From https://css.glass */
   background: rgba($white1, 0);
   backdrop-filter: blur(14.3px);
-  -webkit-backdrop-filter: blur(14.3px);
+  filter: blur(
+    0
+  ); // this will fix the issue of backdrop-filter when changing window size
 }
 
 %full-absolute {

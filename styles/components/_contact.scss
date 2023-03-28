@@ -1,8 +1,6 @@
 @use '../abstracts/' as *;
 
 .contact {
-  background-color: $black3;
-
   &__page {
     @extend %justify-center;
     flex-direction: column;

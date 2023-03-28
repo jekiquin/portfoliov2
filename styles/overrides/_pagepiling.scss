@@ -27,3 +27,13 @@
 .pp-slidesNav .active span {
   background: $primary;
 }
+
+.section {
+  &--about {
+    background-color: $black1;
+  }
+
+  &--contact {
+    background-color: $black3;
+  }
+}

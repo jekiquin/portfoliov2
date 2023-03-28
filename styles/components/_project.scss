@@ -87,7 +87,6 @@
       &::after {
         @extend %full-absolute;
         content: '';
-        z-index: 2;
         background: url('/images/under-construction.webp');
         background-size: 30%;
         background-repeat: no-repeat;
@@ -99,7 +98,6 @@
       &::after {
         @extend %full-absolute;
         content: '';
-        z-index: 2;
         background: url('/images/confidential.webp');
         background-size: contain;
         background-repeat: no-repeat;

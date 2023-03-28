@@ -10,7 +10,7 @@ $gradient: linear-gradient(
   grid-template-rows: 50vh 1fr;
   grid-template-columns: 1fr;
   gap: 3rem;
-  min-height: calc(100vh + 5rem);
+  min-height: 100vh;
 
   @include media(map-get($screen, 'tablet')) {
     grid-template-rows: 1fr;
@@ -123,11 +123,8 @@ $gradient: linear-gradient(
 
   &__side {
     @extend %justify-align-center;
-    height: 100%;
-    width: 100%;
+    @extend %full-absolute;
     transition: all 0.8s ease;
-    position: absolute;
-    inset: 0;
     backface-visibility: hidden;
     overflow: hidden;
 

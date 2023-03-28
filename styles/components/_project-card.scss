@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+@for $i from 1 through $project-count {
+  $index-previous: ($i + $project-count - 1) % $project-count;
+  $index-next: ($i + 1) % $project-count;
+
+  @if $index-previous == 0 {
+    $index-previous: $project-count;
+  }
+  @if $index-next == 0 {
+    $index-next: $project-count;
+  }
+
+  #item-#{$i}:checked ~ .projects__cards {
+    @include project-card-opacity();
+
+    & #project-#{$index-previous} {
+      @include project-card-behind();
+      transform: translateY(-50% - 30%) translateZ(-20rem);
+
+      @include media(map-get($screen, 'tablet')) {
+        transform: translateY(-40%) translateX(-50%) translateZ(-50rem);
+      }
+    }
+  }
+
+  #item-#{$i}:checked ~ .projects__cards {
+    @include project-card-opacity();
+
+    & #project-#{$index-next} {
+      @include project-card-behind();
+      transform: translateY(-50% + 35%) translateZ(-30rem);
+
+      @include media(map-get($screen, 'tablet')) {
+        transform: translateY(-40%) translateX(50%) translateZ(-50rem);
+      }
+    }
+  }
+
+  #item-#{$i}:checked ~ .projects__cards #project-#{$i} {
+    transform: translateY(-50%) translateZ(0);
+    opacity: 1;
+    z-index: 1;
+    border: none;
+    cursor: default;
+
+    &::after {
+      opacity: 1;
+    }
+
+    & .projects__context {
+      transition: all 0.5s ease 0.5s;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  #item-#{$i}:checked ~ .projects__buttons #button-#{$i} {
+    background-color: $primary;
+  }
+}

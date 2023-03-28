@@ -1,3 +1,5 @@
+import model from '../model/me.glb';
+
 const threeContainer = document.querySelector('.about__three');
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 
@@ -14,7 +16,7 @@ export const init = async () => {
 
 const loadModel = async (scene, camera) => {
   const loader = new THREE.GLTFLoader();
-  const data = await loader.loadAsync('model/me.glb');
+  const data = await loader.loadAsync(model);
 
   const box = new THREE.Box3().setFromObject(data.scene);
   const center = new THREE.Vector3();

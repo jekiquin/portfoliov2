@@ -1,9 +1,7 @@
 @use '../abstracts' as *;
 
 .skills {
-  background: url('/images/skillsbg.webp');
-  background-size: cover;
-  background-position: center;
+  @include background('/images/skillsbg.webp');
 
   &__page {
     background-color: transparent;

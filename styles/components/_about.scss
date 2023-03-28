@@ -23,6 +23,7 @@ $gradient: linear-gradient(
 
   &__header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: baseline;
     gap: 1rem;

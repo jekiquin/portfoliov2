@@ -35,7 +35,7 @@ $(document).ready(function () {
     navigation: {
       textColor: '#93edc7',
       bulletsColor: '#93edc7',
-      position: 'right',
+      position: 'left',
       tooltips: PAGES,
     },
     normalScrollElements: null,

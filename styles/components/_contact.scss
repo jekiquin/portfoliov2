@@ -7,7 +7,7 @@
     @extend %justify-center;
     flex-direction: column;
     align-content: stretch;
-    gap: 2rem;
+    gap: 3rem;
     width: min(25rem, 100%);
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +20,7 @@
     @extend %justify-center;
     flex-direction: column;
     align-content: stretch;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   &__input {
@@ -76,6 +76,11 @@
         box-shadow: inset 1px 1px 2px $black2, inset -1px -1px 2px $black1;
       }
     }
+
+    &--submit {
+      margin-top: 1rem;
+      width: 100%;
+    }
   }
 
   &__divider {
@@ -114,8 +119,17 @@
     gap: 1rem;
 
     &-item {
+      @extend .contact__field--button;
       width: fit-content;
       border-radius: 1rem;
+      padding: 0;
     }
+  }
+
+  &__link {
+    display: block;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
   }
 }

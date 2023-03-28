@@ -43,6 +43,9 @@
 }
 
 .section {
+  height: 100vh;
+  height: var(--doc-height);
+
   &--about {
     background-color: $black1;
   }

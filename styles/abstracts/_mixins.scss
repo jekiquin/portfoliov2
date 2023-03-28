@@ -39,6 +39,7 @@
 @mixin project-card-opacity {
   & .projects__card {
     opacity: 0;
+    cursor: pointer;
   }
 }
 

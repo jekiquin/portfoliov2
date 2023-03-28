@@ -144,7 +144,6 @@
     width: 100%;
     transform: translate(0);
     opacity: 0;
-    transition: all 0.5s ease 0.5s;
 
     @include media(map-get($screen, 'tablet')) {
       @include padding(1, 2, 2);
@@ -166,6 +165,7 @@
 
   &__links {
     @extend %align-center;
+    @include margin(1, 0, 2);
     gap: 1rem;
   }
 
@@ -184,6 +184,31 @@
     &:hover {
       background-color: $white1;
       color: $black1;
+    }
+  }
+
+  &__stacks {
+    @extend %align-center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-inline-start: 0;
+    row-gap: 0.3rem;
+
+    &-item {
+      @extend %justify-align-center;
+      @include padding(0.8, 2);
+      // min-width: 5rem;
+      font-size: 0.8rem;
+      color: $black1;
+      background: linear-gradient(#fff, #e8e8e8);
+      clip-path: polygon(
+        0 0,
+        calc(100% - 0.2rem) 0,
+        100% 50%,
+        calc(100% - 0.2rem) 100%,
+        0 100%,
+        0.2rem 50%
+      );
     }
   }
 }

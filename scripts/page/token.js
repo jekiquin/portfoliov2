@@ -1,9 +1,9 @@
 const token = document.querySelector('.token');
 const tokenSpinner = document.querySelector('.token > div');
-// const slot = document.querySelector('.slot');
+const slot = document.querySelector('.slot');
 
 let tokenClicked = false;
-let showGame = false;
+let tokenInserted = false;
 
 export const initToken = () => {
   token.addEventListener('click', () => {
@@ -13,8 +13,10 @@ export const initToken = () => {
     tokenSpinner.style.animation = 'spin 0.2s infinite linear';
   });
 
-  //   slot.addEventListener('click', () => {
-  //     if (!tokenClicked) return;
-  //     showGame = true;
-  //   });
+  slot.addEventListener('click', () => {
+    if (!tokenClicked) return;
+    tokenInserted = true;
+    slot.style.display = 'none';
+    console.log({ tokenClicked, tokenInserted });
+  });
 };

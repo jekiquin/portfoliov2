@@ -4,10 +4,14 @@
   @extend %justify-align-center;
   flex-direction: column;
   position: sticky;
-  bottom: 1rem;
+  bottom: $nav-size;
   left: 0;
   right: 0;
   width: 100%;
+
+  @include media(screen('desktop')) {
+    bottom: 1rem;
+  }
 
   &__link {
     text-decoration: none;

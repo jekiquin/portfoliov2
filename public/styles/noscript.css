@@ -14,14 +14,6 @@ body,
   padding-top: 4rem;
 }
 
-.menu {
-  display: block;
-}
-
-.menu__container {
-  top: 100vh;
-}
-
 .page {
   padding-top: 1rem;
 }

@@ -18,11 +18,15 @@ body,
   display: block;
 }
 
+.menu__container {
+  top: 100vh;
+}
+
 .page {
   padding-top: 1rem;
 }
 
-.about__context p {
+.about__context {
   transform: translateX(0);
 }
 
@@ -52,5 +56,20 @@ body,
 .skills,
 .projects {
   background-attachment: fixed;
-  background-size: auto var(--doc-height);
+  background-size: auto 100vh;
+  height: 100vh;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: initial;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: initial;
+}
+
+*:focus-visible {
+  outline-color: initial;
 }

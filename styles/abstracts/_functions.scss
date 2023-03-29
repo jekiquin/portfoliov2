@@ -26,5 +26,5 @@
 }
 
 @function screen($screen-size) {
-  @return screen($screen-size);
+  @return map-get($screen, $screen-size);
 }

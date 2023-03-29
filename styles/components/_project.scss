@@ -50,6 +50,11 @@
     transition: all 0.4s ease;
     user-select: none;
 
+    @include media(screen('desktop')) {
+      height: min(30rem, 100%);
+      width: 50rem;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -65,9 +70,20 @@
       transition: opacity 0.5s linear;
     }
 
-    @include media(screen('desktop')) {
-      height: min(30rem, 100%);
-      width: 50rem;
+    &::before {
+      content: 'previous';
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      font-family: 'Marvin Visions Variable', 'Playfair Display SC',
+        'sans-serif';
+      font-size: 4rem;
+      color: $primary;
+      text-shadow: 1px 1px 2px $accent;
+      background-color: $black1;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -224,6 +240,8 @@
     cursor: pointer;
     background-color: transparent;
     transition: background-color 0.5s ease;
+    text-align: center;
+    font-size: 0.8rem;
 
     &:hover {
       background-color: $primary;

@@ -42,7 +42,7 @@ $(document).ready(function () {
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 3,
     touchSensitivity: 5,
-    keyboardScrolling: true,
+    keyboardScrolling: false,
     sectionSelector: '.section',
     animateAnchor: false,
 

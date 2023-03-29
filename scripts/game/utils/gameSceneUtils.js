@@ -1,3 +1,5 @@
+const BOSS_START = -200;
+
 const DROP = 10;
 const TEXT_STYLE = {
   fontFamily: 'Game',
@@ -13,6 +15,7 @@ export function gameInit(scene) {
   scene.gameState.score = 0;
 }
 export function addTexts(scene) {
+  const { width } = scene.sizer;
   scene.gameState.scoreText = scene.add
     .text(10, 700, `Score: ${scene.gameState.score}`, {
       ...TEXT_STYLE,
@@ -20,7 +23,7 @@ export function addTexts(scene) {
     })
     .setOrigin(0, 0);
   scene.gameState.highScoreText = scene.add
-    .text(530, 700, `High Score: ${scene.gameState.highScore}`, {
+    .text(width - 10, 700, `High Score: ${scene.gameState.highScore}`, {
       ...TEXT_STYLE,
       fontSize: '12px',
     })
@@ -39,9 +42,10 @@ export function addTexts(scene) {
 }
 
 export function addPlayer(scene, player) {
+  const { width } = scene.sizer;
   scene.gameState.player = scene.physics.add
-    .sprite(270, 200, player)
-    .setScale(0.17);
+    .sprite(width / 2, 200, player)
+    .setScale(0.3);
   scene.gameState.player.setPosition(
     scene.cameras.main.centerX,
     scene.cameras.main.centerY
@@ -52,9 +56,10 @@ export function addPlayer(scene, player) {
 }
 
 export function addPlatform(scene, platform) {
+  const { width } = scene.sizer;
   scene.gameState.platforms = scene.physics.add.staticGroup();
   scene.gameState.platforms
-    .create(270, 700, platform)
+    .create(width / 2, 700, platform)
     .setScale(1, 0.01)
     .refreshBody();
 }
@@ -64,7 +69,7 @@ export function addEnemies(scene, enemies) {
     scene.gameState.enemies.destroy();
   }
   scene.gameState.enemies = scene.physics.add.group();
-  generateEnemyGroup(scene.gameState.enemies, enemies);
+  generateEnemyGroup(scene.gameState.enemies, enemies, scene.sizeScale());
   scene.gameState.enemies.setVisible(false);
 
   if (scene.gameState.pellets) {
@@ -78,20 +83,25 @@ export function addBoss(scene, boss) {
     scene.gameState.boss.destroy();
   }
   scene.gameState.boss = scene.physics.add
-    .sprite(0, 30, boss)
+    .sprite(BOSS_START, 30, boss)
     .setGravityY(-200)
-    .setScale(0.5);
-  scene.gameState.boss.setOrigin(1, 0);
+    .setScale(0.5)
+    .setOrigin(1, 0);
+
   scene.gameState.bossMove = scene.tweens.add({
-    targets: [scene.gameState.boss],
-    x: 600,
+    targets: scene.gameState.boss,
+    x: {
+      getStart: () => BOSS_START,
+      getEnd: () => scene.sizer.width - BOSS_START,
+    },
     ease: 'Linear',
     duration: 6000,
     repeat: -1,
     yoyo: false,
-    repeatDelay: 10000,
+    repeatDelay: 1000,
   });
-  scene.gameState.bossMove.stop();
+
+  scene.gameState.bossMove.stop(BOSS_START);
 }
 
 export function addColliders(scene) {
@@ -143,7 +153,7 @@ export function addColliders(scene) {
     scene.gameState.bossMove.targets[0],
     (_, bullet) => {
       bullet.destroy();
-      scene.gameState.bossMove.stop(0);
+      scene.gameState.bossMove.stop(BOSS_START);
       scene.gameState.bossStart = 0;
       scene.gameState.score += 50;
       displayScores(scene);
@@ -197,6 +207,7 @@ export function genEnemyBullets(scene, enemyBullet) {
 }
 
 export function genEnemyMovement(scene) {
+  const { width } = scene.sizer;
   const totalEnemies = scene.gameState.enemies?.getChildren().length;
   if (!totalEnemies) {
     scene.gameState.playerBullet
@@ -215,7 +226,8 @@ export function genEnemyMovement(scene) {
   scene.gameState.rightMostBug = sortedEnemies[sortedEnemies.length - 1];
 
   const isBoundary =
-    scene.gameState.leftMostBug.x < 10 || scene.gameState.rightMostBug.x > 530;
+    scene.gameState.leftMostBug.x < 10 ||
+    scene.gameState.rightMostBug.x > width - 10;
 
   if (isBoundary) {
     scene.gameState.enemyVelocity *= -1;
@@ -229,12 +241,18 @@ export function genEnemyMovement(scene) {
   });
 }
 
-export function generateEnemyGroup(enemyGroup, enemies) {
+export function generateEnemyGroup(enemyGroup, enemies, scale) {
+  const factor = 50 * scale;
+
   for (let yEnemies = 1; yEnemies < 6; yEnemies++) {
     for (let xEnemies = 1; xEnemies < 11; xEnemies++) {
       enemyGroup
-        .create(50 * xEnemies, 50 + 50 * yEnemies, enemies[yEnemies - 1])
-        .setScale(0.3)
+        .create(
+          factor * xEnemies,
+          factor + factor * yEnemies,
+          enemies[yEnemies - 1]
+        )
+        .setScale(0.3 * scale)
         .setGravityY(-200);
     }
   }
@@ -278,15 +296,16 @@ function gamePlayEnd(scene) {
 }
 
 function gameOverTexts(scene) {
+  const { width } = scene.sizer;
   scene.gameState.gameOverText = scene.add
-    .text(270, 360, 'GAME OVER! PLAY AGAIN?', TEXT_STYLE)
+    .text(width / 2, 360, 'GAME OVER! PLAY AGAIN?', TEXT_STYLE)
     .setOrigin(0.5, 0.5);
   scene.gameState.yesText = scene.add
-    .text(270, 400, 'YES', TEXT_STYLE)
+    .text(width / 2, 400, 'YES', TEXT_STYLE)
     .setOrigin(0.5, 0.5)
     .setInteractive();
   scene.gameState.noText = scene.add
-    .text(270, 440, 'NO', TEXT_STYLE)
+    .text(width / 2, 440, 'NO', TEXT_STYLE)
     .setOrigin(0.5, 0.5)
     .setInteractive();
 

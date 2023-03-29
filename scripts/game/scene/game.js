@@ -11,11 +11,12 @@ import {
   generateEnemyGroup,
 } from '../utils/gameSceneUtils';
 import { gameControls } from '../utils/gameControls';
+import Scene from './scene.js';
 
 const ENEMY_FIRE_DELAY = 3500;
 const BOSS_DELAY = 7000;
 
-class GameScene extends Phaser.Scene {
+export default class GameScene extends Scene {
   constructor() {
     super({ key: 'GameScene' });
     this.gameState = {
@@ -44,6 +45,8 @@ class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.initScaler();
+
     this.gameState.active = true;
     this.gameState.cursors = this.input.keyboard.createCursorKeys();
     this.add
@@ -94,10 +97,15 @@ class GameScene extends Phaser.Scene {
       this.gameState.bossMove.play();
     }
 
+    console.log(this.gameState.enemies?.getChildren().length);
     if (!this.gameState.enemies?.getChildren().length) {
       this.gameState.level += 0.5;
       this.gameState.enemyVelocity = this.gameState.level;
-      generateEnemyGroup(this.gameState.enemies, this.gameState.enemyList);
+      generateEnemyGroup(
+        this.gameState.enemies,
+        this.gameState.enemyList,
+        this.sizeScale()
+      );
       this.gameState.active = true;
     }
 
@@ -105,5 +113,3 @@ class GameScene extends Phaser.Scene {
     genEnemyMovement(this);
   }
 }
-
-export default GameScene;

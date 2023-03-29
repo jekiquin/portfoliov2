@@ -86,7 +86,7 @@ export const pagePilingInit = () => {
 export const pagePilingMobile = () => {
   const width = window.innerWidth;
 
-  const isMobile = width !== MOBILE;
+  const isDesktop = width > MOBILE;
 
-  $.fn.pagepiling.setAllowScrolling(isMobile);
+  $.fn.pagepiling.setAllowScrolling(isDesktop);
 };

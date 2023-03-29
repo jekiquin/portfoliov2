@@ -13,6 +13,7 @@ import {
 import { initShowDog } from './page/dog';
 import { observeSkills, unobserveSkills } from './page/intersectionObserver';
 import { initToken } from './page/token';
+import { documentHeightUpdate } from './page/documentHeight';
 
 // adding jquery module to vanilla js. Needed for pagepiling
 window.$ = $;
@@ -92,6 +93,7 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  documentHeightUpdate();
   initShowDog();
   initToken();
   initSkillsIndicator();
@@ -100,5 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 addEventListener('resize', () => {
+  documentHeightUpdate();
   init();
 });

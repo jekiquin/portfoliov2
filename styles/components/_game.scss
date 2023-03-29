@@ -32,7 +32,7 @@
     @include background('https://labs.phaser.io/assets/skies/space3.png');
 
     flex-direction: column;
-    height: min(100vh, $game-height);
+    height: min(var(--doc-height), $game-height);
     width: min(100vw, $game-width);
   }
 

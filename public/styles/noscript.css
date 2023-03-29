@@ -52,5 +52,5 @@ body,
 .skills,
 .projects {
   background-attachment: fixed;
-  background-size: auto 100vh;
+  background-size: auto var(--doc-height);
 }

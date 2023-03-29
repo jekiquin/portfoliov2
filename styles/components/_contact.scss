@@ -52,7 +52,7 @@
     appearance: none;
 
     &::placeholder {
-      color: rgba($white3, 0.5);
+      color: $white3;
     }
 
     &:focus {

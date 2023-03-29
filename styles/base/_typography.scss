@@ -14,11 +14,15 @@ html {
   font-family: 'Alef', 'sans-serif';
   font-size: 0.625rem;
 
-  @include media(map-get($screen, 'mobile')) {
+  @include media(screen('small')) {
+    font-size: 0.75rem;
+  }
+
+  @include media(screen('mobile')) {
     font-size: 0.875rem;
   }
 
-  @include media(map-get($screen, 'desktop')) {
+  @include media(screen('desktop')) {
     font-size: 1rem;
   }
 }

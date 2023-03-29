@@ -24,3 +24,7 @@
     @return $t $r $b $l;
   }
 }
+
+@function screen($screen-size) {
+  @return screen($screen-size);
+}

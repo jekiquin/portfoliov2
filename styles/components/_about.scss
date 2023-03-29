@@ -14,12 +14,12 @@ $gradient: linear-gradient(
   min-height: 100vh;
   min-height: var(--doc-height);
 
-  @include media(map-get($screen, 'tablet')) {
+  @include media(screen('tablet')) {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
   }
 
-  @include media(map-get($screen, 'ultra')) {
+  @include media(screen('ultra')) {
     grid-template-columns: 1fr 2fr;
   }
 

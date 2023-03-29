@@ -15,20 +15,17 @@ export const removeAvatarAnimation = () => {
 
 // -------------------------- about description ------------------------------------
 const aboutContainer = document.querySelector('.about__context');
-const contexts = Array.from(aboutContainer.children);
+
+const SHOW_DESCRIPTION_CLASS = 'about__context--show';
 
 export const addDescriptionsAnimation = () => {
-  contexts.forEach((context, idx) => {
-    context.style.animation = `show-description 0.5s ease ${
-      idx * 0.5 + 0.8
-    }s 1 normal forwards`;
-  });
+  aboutContainer.classList.add(SHOW_DESCRIPTION_CLASS);
 };
 
 export const removeDescriptionsAnimation = () => {
-  contexts.forEach((context, idx) => {
-    context.style.animation = '';
-  });
+  if (aboutContainer.classList.contains(SHOW_DESCRIPTION_CLASS)) {
+    aboutContainer.classList.remove(SHOW_DESCRIPTION_CLASS);
+  }
 };
 
 // -------------------------- skills indicator ------------------------------------

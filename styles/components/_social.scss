@@ -12,7 +12,7 @@
     padding: 0;
     list-style: none;
 
-    @include media(map-get($screen, 'tablet')) {
+    @include media(screen('tablet')) {
       justify-content: flex-end;
     }
   }
@@ -62,7 +62,7 @@
       font-size: 0.8rem;
       transform: rotate(0deg) skewX(-45deg);
 
-      @include media(map-get($screen, 'desktop')) {
+      @include media(screen('desktop')) {
         color: #b1b1b1;
       }
     }

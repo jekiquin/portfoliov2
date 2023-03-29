@@ -5,7 +5,7 @@ import {
   addDescriptionsAnimation,
   removeDescriptionsAnimation,
 } from './animations';
-import { PAGES } from '../utils/constants';
+import { MOBILE, PAGES } from '../utils/constants';
 import $ from 'jquery';
 
 // adding jquery module to vanilla js. Needed for pagepiling
@@ -81,4 +81,12 @@ export const pagePilingInit = () => {
     },
     // afterRender: function () {},
   });
+};
+
+export const pagePilingMobile = () => {
+  const width = window.innerWidth;
+
+  const isMobile = width !== MOBILE;
+
+  $.fn.pagepiling.setAllowScrolling(isMobile);
 };

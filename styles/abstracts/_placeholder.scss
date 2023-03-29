@@ -33,14 +33,14 @@
 
 %container {
   @include padding(1, 4);
-  max-width: map-get($screen, 'ultra');
+  max-width: screen('ultra');
 
-  @include media(map-get($screen, 'tablet')) {
+  @include media(screen('tablet')) {
     margin-left: auto;
     margin-right: auto;
   }
 
-  @include media(map-get($screen, 'desktop')) {
+  @include media(screen('desktop')) {
     @include padding(2, 4);
   }
 }

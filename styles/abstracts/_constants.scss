@@ -1,6 +1,7 @@
 @use './colors' as *;
 
 $screen: (
+  small: 320px,
   mobile: 480px,
   tablet: 768px,
   desktop: 1024px,
@@ -21,5 +22,6 @@ $status: (
 );
 
 $header-size: 5rem;
+$nav-size: 4.5rem;
 
 $project-count: 6; // there are 5 projects

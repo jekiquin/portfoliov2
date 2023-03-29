@@ -18,8 +18,26 @@
       @include project-card-behind();
       transform: translateY(-50% - 30%) translateZ(-20rem);
 
-      @include media(map-get($screen, 'desktop')) {
-        transform: translateY(-40%) translateX(-50%) translateZ(-50rem);
+      &::before {
+        content: 'previous';
+        top: 0;
+        bottom: unset;
+        border-radius: 16px 16px 0 0;
+      }
+
+      @include media(screen('desktop')) {
+        transform: translateY(-40%) translateX(-40%) translateZ(-50rem);
+
+        &::before {
+          left: 0;
+          right: unset;
+          width: fit-content;
+          writing-mode: vertical-lr;
+          text-orientation: sideways;
+          height: 100%;
+          transform: translateZ(-50rem);
+          border-radius: 16px 0 0 16px;
+        }
       }
     }
   }
@@ -31,8 +49,26 @@
       @include project-card-behind();
       transform: translateY(-50% + 35%) translateZ(-30rem);
 
-      @include media(map-get($screen, 'desktop')) {
-        transform: translateY(-40%) translateX(50%) translateZ(-50rem);
+      &::before {
+        content: 'next';
+        top: unset;
+        bottom: 0;
+        border-radius: 0 0 16px 16px;
+      }
+
+      @include media(screen('desktop')) {
+        transform: translateY(-40%) translateX(40%) translateZ(-50rem);
+
+        &::before {
+          right: 0;
+          left: unset;
+          width: fit-content;
+          writing-mode: vertical-lr;
+          text-orientation: sideways;
+          height: 100%;
+          transform: translateZ(-50rem);
+          border-radius: 0 16px 16px 0;
+        }
       }
     }
   }
@@ -46,6 +82,10 @@
 
     &::after {
       opacity: 1;
+    }
+
+    &::before {
+      content: '';
     }
 
     & .projects__context {

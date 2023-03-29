@@ -13,7 +13,7 @@
   &.left {
     left: 0;
 
-    @include media(map-get($screen, 'desktop')) {
+    @include media(screen('desktop')) {
       left: 1rem;
     }
   }
@@ -21,7 +21,7 @@
   &.right {
     right: 0;
 
-    @include media(map-get($screen, 'desktop')) {
+    @include media(screen('desktop')) {
       right: 1rem;
     }
   }

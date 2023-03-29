@@ -10,15 +10,16 @@ $gradient: linear-gradient(
   grid-template-rows: 50vh 1fr;
   grid-template-columns: 1fr;
   gap: 3rem;
+  margin-bottom: 10rem;
   min-height: 100vh;
   min-height: var(--doc-height);
 
-  @include media(map-get($screen, 'tablet')) {
+  @include media(screen('tablet')) {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
   }
 
-  @include media(map-get($screen, 'ultra')) {
+  @include media(screen('ultra')) {
     grid-template-columns: 1fr 2fr;
   }
 
@@ -80,8 +81,10 @@ $gradient: linear-gradient(
   }
 
   &__context {
-    & p {
-      transform: translateX(150%);
+    transform: translateX(150%);
+
+    &--show {
+      animation: show-description 0.5s ease 0.8s 1 normal forwards;
     }
   }
 

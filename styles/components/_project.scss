@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .projects {
-  @extend %full-absolute;
   @include background('/images/projectsbg.webp');
   background-position: bottom;
 
@@ -51,6 +50,11 @@
     transition: all 0.4s ease;
     user-select: none;
 
+    @include media(screen('desktop')) {
+      height: min(30rem, 100%);
+      width: 50rem;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -66,9 +70,20 @@
       transition: opacity 0.5s linear;
     }
 
-    @include media(map-get($screen, 'desktop')) {
-      height: min(30rem, 100%);
-      width: 50rem;
+    &::before {
+      content: 'previous';
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 2;
+      font-family: 'Marvin Visions Variable', 'Playfair Display SC',
+        'sans-serif';
+      font-size: 4rem;
+      color: $primary;
+      text-shadow: 1px 1px 2px $accent;
+      background-color: $black1;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -144,7 +159,7 @@
     opacity: 0;
     z-index: -1;
 
-    @include media(map-get($screen, 'tablet')) {
+    @include media(screen('tablet')) {
       @include padding(1, 2, 2);
     }
   }
@@ -213,7 +228,7 @@
   &__buttons {
     @extend %justify-align-center;
     position: fixed;
-    bottom: -4rem;
+    bottom: 1rem;
     gap: 1rem;
   }
 
@@ -225,6 +240,8 @@
     cursor: pointer;
     background-color: transparent;
     transition: background-color 0.5s ease;
+    text-align: center;
+    font-size: 0.8rem;
 
     &:hover {
       background-color: $primary;

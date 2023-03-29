@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .projects {
-  @extend %full-absolute;
   @include background('/images/projectsbg.webp');
   background-position: bottom;
 

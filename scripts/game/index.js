@@ -4,7 +4,8 @@ import {
   WIDTH,
   HEIGHT,
 } from '../utils/constants.js';
-import HomeScene from './scene/home.js';
+import HomeScene from './scene/home';
+import GameScene from './scene/game';
 
 const GRAVITY = 200;
 
@@ -29,7 +30,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [HomeScene],
+  scene: [HomeScene, GameScene],
 };
 
 export const initGame = () => {

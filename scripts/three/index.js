@@ -14,6 +14,11 @@ export const init = async () => {
 
 const loadModel = async (scene, camera) => {
   const loader = new THREE.GLTFLoader();
+
+  const draco = new THREE.DRACOLoader();
+  draco.setDecoderConfig({ type: 'js' });
+  draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+  loader.setDRACOLoader(draco);
   const data = await loader.loadAsync('/model/me.glb');
 
   const box = new THREE.Box3().setFromObject(data.scene);

@@ -6,10 +6,10 @@ const slot = document.querySelector('.slot');
 const gameClose = document.querySelector('.game__close');
 const gameDiv = document.querySelector('.game');
 
-let tokenClicked = true;
-const game = new Phaser.Game(config);
+let tokenClicked = false;
 
 export const initToken = () => {
+  const game = new Phaser.Game(config);
   token.addEventListener('click', () => {
     if (!tokenClicked) tokenClicked = true;
     token.style.animation =

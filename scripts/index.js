@@ -5,6 +5,7 @@ import { initShowDog } from './page/dog';
 import { initToken } from './page/token';
 import { documentHeightUpdate } from './page/documentHeight';
 import { pagePilingInit, pagePilingMobile } from './page/pagePiling';
+import { initGame } from './game';
 
 // ------------------------ Event listeners ------------------------
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initToken();
   initSkillsIndicator();
   initThreeScene();
+  initGame();
 });
 
 addEventListener('resize', () => {

@@ -9,12 +9,14 @@ import {
   genEnemyBullets,
   genEnemyMovement,
   generateEnemyGroup,
+  genPlayerBullets,
 } from '../utils/gameSceneUtils';
 import { gameControls } from '../utils/gameControls';
 import Scene from './scene.js';
 
 const ENEMY_FIRE_DELAY = 3500;
 const BOSS_DELAY = 7000;
+const PLAYER_BULLET_DELAY = 400;
 
 export default class GameScene extends Scene {
   constructor() {
@@ -64,7 +66,7 @@ export default class GameScene extends Scene {
     addColliders(this);
   }
 
-  update(gameTime) {
+  update(gameTime, delta) {
     if (!this.gameState.active) {
       return;
     }
@@ -76,6 +78,16 @@ export default class GameScene extends Scene {
 
     if (gameTime - this.gameState.startTime < ENEMY_FIRE_DELAY) {
       return;
+    }
+
+    if (
+      this.periodTime === undefined ||
+      this.periodTime > PLAYER_BULLET_DELAY / this.gameState.level
+    ) {
+      genPlayerBullets(this, 'playerbullet');
+      this.periodTime = 0;
+    } else {
+      this.periodTime += delta;
     }
 
     if (this.gameState.bossStart === 0) {
@@ -97,7 +109,6 @@ export default class GameScene extends Scene {
       this.gameState.bossMove.play();
     }
 
-    console.log(this.gameState.enemies?.getChildren().length);
     if (!this.gameState.enemies?.getChildren().length) {
       this.gameState.level += 0.5;
       this.gameState.enemyVelocity = this.gameState.level;
@@ -109,7 +120,8 @@ export default class GameScene extends Scene {
       this.gameState.active = true;
     }
 
-    gameControls(this, 'playerbullet');
+    gameControls(this);
+
     genEnemyMovement(this);
   }
 }

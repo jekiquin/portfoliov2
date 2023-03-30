@@ -33,7 +33,7 @@ export const pagePilingInit = () => {
     normalScrollElements: null,
     normalScrollElementTouchThreshold: 10,
     touchSensitivity: 0.005,
-    keyboardScrolling: true,
+    keyboardScrolling: false,
     sectionSelector: '.section',
     animateAnchor: false,
 

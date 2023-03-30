@@ -185,9 +185,9 @@ export function addColliders(scene) {
   );
 }
 
-export function genPlayerBullets(scene, playerBullet) {
+export function genPlayerBullets(scene, bullet) {
   scene.gameState.playerBullet
-    .create(scene.gameState.player.x, scene.gameState.player.y, playerBullet)
+    .create(scene.gameState.player.x, scene.gameState.player.y, bullet)
     .setScale(0.5)
     .setGravityY(-400);
 }

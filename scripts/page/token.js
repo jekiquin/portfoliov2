@@ -7,9 +7,9 @@ const gameClose = document.querySelector('.game__close');
 const gameDiv = document.querySelector('.game');
 
 let tokenClicked = true;
-export const initToken = () => {
-  const game = new Phaser.Game(config);
+const game = new Phaser.Game(config);
 
+export const initToken = () => {
   token.addEventListener('click', () => {
     if (!tokenClicked) tokenClicked = true;
     token.style.animation =
@@ -27,8 +27,5 @@ export const initToken = () => {
   gameClose.addEventListener('click', () => {
     gameDiv.style.zIndex = '-999';
     gameDiv.style.opacity = '0';
-
-    console.log(game.scene.keys.GameScene.scene.start('HomeScene'));
-    game.scene.stop();
   });
 };

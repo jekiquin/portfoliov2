@@ -38,14 +38,7 @@ export default class Scene extends Phaser.Scene {
     const scaleX = this.sizer.width / DEFAULT_WIDTH;
     const scaleY = this.sizer.height / DEFAULT_HEIGHT;
 
-    console.log(
-      this.sizer.height,
-      this.sizer.width,
-      this.parent.height,
-      this.parent.width
-    );
     camera.setViewport(x, y, this.sizer.width, this.sizer.height);
-    console.log(scaleX, scaleY, this.sizeScale());
     camera.setZoom(scaleX, scaleY);
     camera.centerOn(this.sizer.width / 2, DEFAULT_HEIGHT / 2);
   }
@@ -57,7 +50,6 @@ export default class Scene extends Phaser.Scene {
   resize(gameSize, baseSize, displaySize, resolution) {
     const width = gameSize.width;
     const height = gameSize.height;
-    console.log({ width, height });
 
     this.parent.setSize(width, height);
     this.sizer.setSize(width, height);

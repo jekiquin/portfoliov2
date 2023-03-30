@@ -4,11 +4,12 @@ import {
   WIDTH,
   HEIGHT,
 } from '../utils/constants.js';
-import HomeScene from './scene/home.js';
+import HomeScene from './scene/home';
+import GameScene from './scene/game';
 
 const GRAVITY = 200;
 
-const config = {
+export const config = {
   type: Phaser.AUTO,
   scale: {
     mode: Phaser.Scale.RESIZE,
@@ -29,9 +30,5 @@ const config = {
       debug: false,
     },
   },
-  scene: [HomeScene],
-};
-
-export const initGame = () => {
-  const game = new Phaser.Game(config);
+  scene: [HomeScene, GameScene],
 };

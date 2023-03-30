@@ -1,5 +1,4 @@
 import '../styles/styles.scss';
-import { initGame } from './game/index.js';
 import { init, initThreeScene } from './three';
 import { initSkillsIndicator } from './page/animations';
 import { initShowDog } from './page/dog';
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowDog();
   initToken();
   initSkillsIndicator();
-  initGame();
   initThreeScene();
 });
 

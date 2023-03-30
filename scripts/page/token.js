@@ -1,9 +1,13 @@
+import { config } from '../game';
+
 const token = document.querySelector('.token');
 const tokenSpinner = document.querySelector('.token > div');
 const slot = document.querySelector('.slot');
+const gameClose = document.querySelector('.game__close');
+const gameDiv = document.querySelector('.game');
 
-let tokenClicked = false;
-let tokenInserted = false;
+let tokenClicked = true;
+const game = new Phaser.Game(config);
 
 export const initToken = () => {
   token.addEventListener('click', () => {
@@ -15,8 +19,13 @@ export const initToken = () => {
 
   slot.addEventListener('click', () => {
     if (!tokenClicked) return;
-    tokenInserted = true;
-    slot.style.display = 'none';
-    console.log({ tokenClicked, tokenInserted });
+
+    gameDiv.style.zIndex = '999';
+    gameDiv.style.opacity = '1';
+  });
+
+  gameClose.addEventListener('click', () => {
+    gameDiv.style.zIndex = '-999';
+    gameDiv.style.opacity = '0';
   });
 };

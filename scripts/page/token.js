@@ -1,5 +1,3 @@
-import { config } from '../game';
-
 const token = document.querySelector('.token');
 const tokenSpinner = document.querySelector('.token > div');
 const slot = document.querySelector('.slot');
@@ -9,7 +7,6 @@ const gameDiv = document.querySelector('.game');
 let tokenClicked = false;
 
 export const initToken = () => {
-  const game = new Phaser.Game(config);
   token.addEventListener('click', () => {
     if (!tokenClicked) tokenClicked = true;
     token.style.animation =

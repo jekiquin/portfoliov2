@@ -9,10 +9,10 @@ const TEXT_STYLE = {
 
 export function gameInit(scene) {
   scene.gameState.enemyVelocity = 1;
-  scene.gameState.enemyVelocityFactor = 1;
   scene.gameState.startTime = 0;
   scene.gameState.bossStart = 0;
   scene.gameState.score = 0;
+  scene.gameState.level = 1;
 }
 
 export function gamePointerInit(scene) {
@@ -306,6 +306,7 @@ function gamePlayEnd(scene) {
   }
 
   scene.gameState.bossMove.stop();
+
   gameInit(scene);
   gameOverTexts(scene);
 }

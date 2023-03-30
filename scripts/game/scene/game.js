@@ -10,13 +10,14 @@ import {
   genEnemyMovement,
   generateEnemyGroup,
   genPlayerBullets,
+  gamePointerInit,
 } from '../utils/gameSceneUtils';
 import { gameControls } from '../utils/gameControls';
 import Scene from './scene.js';
 
 const ENEMY_FIRE_DELAY = 3500;
 const BOSS_DELAY = 7000;
-const PLAYER_BULLET_DELAY = 400;
+const PLAYER_BULLET_DELAY = 300;
 
 export default class GameScene extends Scene {
   constructor() {
@@ -57,6 +58,7 @@ export default class GameScene extends Scene {
       .setScale(1, 1.2);
 
     gameInit(this);
+    gamePointerInit(this);
     addTexts(this);
     addPlayer(this, 'ship', 'playerbullet');
     addPlatform(this, 'platform');

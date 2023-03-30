@@ -14,19 +14,34 @@ export function gameInit(scene) {
   scene.gameState.bossStart = 0;
   scene.gameState.score = 0;
 }
+
+export function gamePointerInit(scene) {
+  scene.input.addPointer();
+}
+
 export function addTexts(scene) {
-  const { width } = scene.sizer;
+  const { width, height } = scene.sizer;
   scene.gameState.scoreText = scene.add
-    .text(10, 700, `Score: ${scene.gameState.score}`, {
-      ...TEXT_STYLE,
-      fontSize: '12px',
-    })
+    .text(
+      10,
+      height - 20 * scene.sizeScale(),
+      `Score: ${scene.gameState.score}`,
+      {
+        ...TEXT_STYLE,
+        fontSize: '12px',
+      }
+    )
     .setOrigin(0, 0);
   scene.gameState.highScoreText = scene.add
-    .text(width - 10, 700, `High Score: ${scene.gameState.highScore}`, {
-      ...TEXT_STYLE,
-      fontSize: '12px',
-    })
+    .text(
+      width - 10,
+      height - 20 * scene.sizeScale(),
+      `High Score: ${scene.gameState.highScore}`,
+      {
+        ...TEXT_STYLE,
+        fontSize: '12px',
+      }
+    )
     .setOrigin(1, 0);
 
   // deleting texts
@@ -56,10 +71,10 @@ export function addPlayer(scene, player) {
 }
 
 export function addPlatform(scene, platform) {
-  const { width } = scene.sizer;
+  const { width, height } = scene.sizer;
   scene.gameState.platforms = scene.physics.add.staticGroup();
   scene.gameState.platforms
-    .create(width / 2, 700, platform)
+    .create(width / 2, height - 20 * scene.sizeScale(), platform)
     .setScale(1, 0.01)
     .refreshBody();
 }
@@ -83,7 +98,7 @@ export function addBoss(scene, boss) {
     scene.gameState.boss.destroy();
   }
   scene.gameState.boss = scene.physics.add
-    .sprite(BOSS_START, 30, boss)
+    .sprite(BOSS_START, 30 * scene.sizeScale(), boss)
     .setGravityY(-200)
     .setScale(0.5)
     .setOrigin(1, 0);
@@ -296,16 +311,16 @@ function gamePlayEnd(scene) {
 }
 
 function gameOverTexts(scene) {
-  const { width } = scene.sizer;
+  const { width, height } = scene.sizer;
   scene.gameState.gameOverText = scene.add
-    .text(width / 2, 360, 'GAME OVER! PLAY AGAIN?', TEXT_STYLE)
+    .text(width / 2, height / 2, 'GAME OVER! PLAY AGAIN?', TEXT_STYLE)
     .setOrigin(0.5, 0.5);
   scene.gameState.yesText = scene.add
-    .text(width / 2, 400, 'YES', TEXT_STYLE)
+    .text(width / 2, height / 2 + 40 * scene.sizeScale(), 'YES', TEXT_STYLE)
     .setOrigin(0.5, 0.5)
     .setInteractive();
   scene.gameState.noText = scene.add
-    .text(width / 2, 440, 'NO', TEXT_STYLE)
+    .text(width / 2, height / 2 + 80 * scene.sizeScale(), 'NO', TEXT_STYLE)
     .setOrigin(0.5, 0.5)
     .setInteractive();
 

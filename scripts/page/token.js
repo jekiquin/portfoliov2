@@ -1,12 +1,15 @@
+import { config } from '../game';
+
 const token = document.querySelector('.token');
 const tokenSpinner = document.querySelector('.token > div');
 const slot = document.querySelector('.slot');
 const gameClose = document.querySelector('.game__close');
 const gameDiv = document.querySelector('.game');
 
-let tokenClicked = false;
-
+let tokenClicked = true;
 export const initToken = () => {
+  const game = new Phaser.Game(config);
+
   token.addEventListener('click', () => {
     if (!tokenClicked) tokenClicked = true;
     token.style.animation =
@@ -19,12 +22,13 @@ export const initToken = () => {
 
     gameDiv.style.zIndex = '999';
     gameDiv.style.opacity = '1';
-
-    console.log('clicked');
   });
 
   gameClose.addEventListener('click', () => {
     gameDiv.style.zIndex = '-999';
     gameDiv.style.opacity = '0';
+
+    console.log(game.scene.keys.GameScene.scene.start('HomeScene'));
+    game.scene.stop();
   });
 };

@@ -18,8 +18,17 @@
   }
 
   &__link {
+    @include padding(0.4, 1);
     height: 3rem;
     width: auto;
+
+    &--main {
+      padding: 0;
+    }
+
+    @include media(screen('mobile')) {
+      @include padding(1, 2);
+    }
   }
 
   &__logo {
@@ -33,6 +42,17 @@
 
     &:hover path {
       fill: $white1;
+    }
+  }
+
+  &__socials {
+    @extend %justify-align-center;
+    list-style: none;
+    margin: 0;
+    gap: 1rem;
+
+    @include media(screen('tablet')) {
+      gap: 2rem;
     }
   }
 }

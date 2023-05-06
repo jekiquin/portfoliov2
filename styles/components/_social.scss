@@ -25,6 +25,10 @@
     &--light {
       color: $white1;
     }
+
+    &--accent {
+      color: $accent;
+    }
   }
 
   &__link {

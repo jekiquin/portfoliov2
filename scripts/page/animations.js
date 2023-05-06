@@ -65,3 +65,17 @@ const totalHorizontalSpacing = (styles) => {
     borderBottomWidth,
   ].reduce((a, b) => parseFloat(a) + parseFloat(b), 0);
 };
+
+// -------------------------- contact form ------------------------------------
+const contactForm = document.querySelector('.contact__form')
+const ANIMATE_CONTACT_FORM = 'contact__form--animate'
+
+export const addContactFormAnimation = () => {
+  contactForm.classList.add(ANIMATE_CONTACT_FORM);
+};
+
+export const removeContactFormAnimation = () => {
+  if (contactForm.classList.contains(ANIMATE_CONTACT_FORM)) {
+    contactForm.classList.remove(ANIMATE_CONTACT_FORM);
+  }
+};

@@ -65,3 +65,12 @@
     transform: scale(0);
   }
 }
+
+@keyframes animate-contact-form {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

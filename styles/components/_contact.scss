@@ -1,6 +1,9 @@
 @use '../abstracts/' as *;
 
 .contact {
+  @include background('/images/contact.webp');
+  background-position: bottom;
+
   &__page {
     @extend %justify-center;
     flex-direction: column;
@@ -14,15 +17,24 @@
     background-color: transparent;
 
     @include media(screen('mobile')) {
-      width: min(30rem, 100%);
+      width: min(40rem, 100%);
     }
   }
 
   &__form {
     @extend %justify-center;
+    @extend %glassmorphic;
     flex-direction: column;
     align-content: stretch;
     gap: 1rem;
+    border-radius: 8px;
+    padding: 1rem 4rem 3rem;
+    margin-top: 2rem;
+    box-shadow: 0px 1px 2px rgba($accent,0.5), 
+              0px 2px 4px rgba($accent,0.5), 
+              0px 4px 8px rgba($accent,0.5), 
+              0px 8px 16px rgba($accent,0.5);
+
   }
 
   &__input {
@@ -123,6 +135,7 @@
       width: fit-content;
       border-radius: 1rem;
       padding: 0;
+      background-color: $black3;
     }
   }
 

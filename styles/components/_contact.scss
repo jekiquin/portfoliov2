@@ -54,10 +54,10 @@
     color: $white1;
     border: 0;
     outline: 0;
-    border-radius: 2rem;
+    border-radius: 8px;
     padding: 1rem;
-    background-color: $black3;
-    box-shadow: inset 2px 2px 5px $black2, inset -2px -2px 5px $black1;
+    background-color: $black1;
+    box-shadow: inset 2px 2px 5px $accent, inset -2px -2px 5px $accent;
     width: 100%;
     box-sizing: border-box;
     transition: all 0.2s ease-in-out;
@@ -68,7 +68,7 @@
     }
 
     &:focus {
-      box-shadow: inset 1px 1px 2px $black2, inset -1px -1px 2px $black1;
+      box-shadow: inset 1px 1px 2px $accent, inset -1px -1px 2px $accent;
     }
 
     &--message {
@@ -76,16 +76,16 @@
     }
 
     &--button {
-      box-shadow: -2px -2px 10px $black1, 2px 2px 10px $black2;
+      box-shadow: -2px -2px 10px $accent, 2px 2px 10px $accent;
       transition: all 0.2s ease-in-out;
       cursor: pointer;
 
       &:hover {
-        box-shadow: -2px -2px 5px $black1, 2px 2px 5px $black2;
+        box-shadow: -2px -2px 5px $accent, 2px 2px 5px $accent;
       }
 
       &:active {
-        box-shadow: inset 1px 1px 2px $black2, inset -1px -1px 2px $black1;
+        box-shadow: inset 1px 1px 2px $accent, inset -1px -1px 2px $accent;
       }
     }
 
@@ -133,9 +133,9 @@
     &-item {
       @extend .contact__field--button;
       width: fit-content;
-      border-radius: 1rem;
+      border-radius: 8px;
       padding: 0;
-      background-color: $black3;
+      background-color: $black1;
     }
   }
 
@@ -145,4 +145,5 @@
     height: 100%;
     width: 100%;
   }
+
 }

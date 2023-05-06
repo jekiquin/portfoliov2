@@ -34,7 +34,11 @@
               0px 2px 4px rgba($accent,0.5), 
               0px 4px 8px rgba($accent,0.5), 
               0px 8px 16px rgba($accent,0.5);
+    transform: scaleY(0);
 
+    &--animate {
+      animation: animate-contact-form 200ms ease-in 1 normal forwards;
+    }
   }
 
   &__input {

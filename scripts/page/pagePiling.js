@@ -4,6 +4,8 @@ import {
   showAvatarAnimation,
   addDescriptionsAnimation,
   removeDescriptionsAnimation,
+  addContactFormAnimation,
+  removeContactFormAnimation
 } from './animations';
 import { MOBILE, PAGES } from '../utils/constants';
 import $ from 'jquery';
@@ -53,6 +55,7 @@ export const pagePilingInit = () => {
         case 'intro':
           break;
         case 'contact':
+          removeContactFormAnimation();
           break;
         default:
           console.error(`${PAGES[index - 1]} not found`);
@@ -74,6 +77,7 @@ export const pagePilingInit = () => {
         case 'intro':
           break;
         case 'contact':
+          addContactFormAnimation();
           break;
         default:
           console.error(`${anchorLink} not found`);

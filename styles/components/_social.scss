@@ -19,8 +19,12 @@
 
   &__icon {
     font-size: 1rem;
-    color: $white1;
+    color: $black1;
     transition: 0.5s;
+
+    &--light {
+      color: $white1;
+    }
   }
 
   &__link {

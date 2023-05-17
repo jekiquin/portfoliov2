@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRNQJBG3EH"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GTAG%"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-MRNQJBG3EH');
+      gtag('config', import.meta.env.VITE_GTAG);
+      console.log(import.meta.env.VITE_GTAG)
     </script>
 
     <meta charset="UTF-8" />
